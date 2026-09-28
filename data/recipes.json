@@ -1,0 +1,1814 @@
+{
+  "tea": [
+    {
+      "id": "genmaicha",
+      "name": "Genmaicha · house",
+      "teaType": "Japanese green tea",
+      "tea": 5,
+      "water": 500,
+      "temp": 80,
+      "steeps": [
+        60,
+        30,
+        60
+      ],
+      "waterProfile": "delicate",
+      "notes": "Toasty, sweet, clean. Increase to 85°C for more roast character.",
+      "subcategory": "Japanese green",
+      "sourceNote": "House recipe · editable starting point.",
+      "methods": [
+        {
+          "id": "house",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 5,
+          "water": 500,
+          "temp": 80,
+          "steeps": [
+            60,
+            30,
+            60
+          ],
+          "steepTemps": [
+            80,
+            80,
+            80
+          ],
+          "presets": [
+            150,
+            250,
+            350,
+            500
+          ],
+          "sourceNote": "House recipe · editable starting point.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "japanese-green",
+      "name": "Japanese green tea · starter",
+      "teaType": "Sencha · starter recipe",
+      "tea": 5,
+      "water": 250,
+      "temp": 75,
+      "steeps": [
+        60,
+        20,
+        40
+      ],
+      "waterProfile": "delicate",
+      "notes": "Adjust temperature and time to suit your tea.",
+      "subcategory": "Japanese green",
+      "sourceNote": "House recipe · editable starting point.",
+      "methods": [
+        {
+          "id": "house",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 5,
+          "water": 250,
+          "temp": 75,
+          "steeps": [
+            60,
+            20,
+            40
+          ],
+          "steepTemps": [
+            75,
+            75,
+            75
+          ],
+          "presets": [
+            150,
+            250,
+            350,
+            500
+          ],
+          "sourceNote": "House recipe · editable starting point.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "white-tea",
+      "name": "Chinese white tea · starter",
+      "teaType": "White tea · starter recipe",
+      "tea": 5,
+      "water": 500,
+      "temp": 85,
+      "steeps": [
+        180,
+        240,
+        300
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "A gentle starting point for a delicate, floral cup.",
+      "subcategory": "White tea",
+      "sourceNote": "House recipe · editable starting point.",
+      "methods": [
+        {
+          "id": "house",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 5,
+          "water": 500,
+          "temp": 85,
+          "steeps": [
+            180,
+            240,
+            300
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            150,
+            250,
+            350,
+            500
+          ],
+          "sourceNote": "House recipe · editable starting point.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-tea",
+      "name": "Black tea · starter",
+      "teaType": "Black tea · starter recipe",
+      "tea": 5,
+      "water": 500,
+      "temp": 95,
+      "steeps": [
+        180,
+        240
+      ],
+      "waterProfile": "robust",
+      "notes": "Adjust steep time to taste; avoid squeezing the leaves.",
+      "subcategory": "Black tea",
+      "sourceNote": "House recipe · editable starting point.",
+      "methods": [
+        {
+          "id": "house",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 5,
+          "water": 500,
+          "temp": 95,
+          "steeps": [
+            180,
+            240
+          ],
+          "steepTemps": [
+            95,
+            95
+          ],
+          "presets": [
+            150,
+            250,
+            350,
+            500
+          ],
+          "sourceNote": "House recipe · editable starting point.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "zisha",
+          "name": "Zisha pot",
+          "vessel": "zisha",
+          "tea": 5,
+          "water": 100,
+          "temp": 95,
+          "steeps": [
+            15,
+            20,
+            30,
+            45
+          ],
+          "steepTemps": [
+            95,
+            95,
+            95,
+            95
+          ],
+          "presets": [
+            80,
+            100,
+            120,
+            150
+          ],
+          "sourceNote": "House gongfu starting point; timing is an adaptation, not a vendor recipe.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "vesselGuidance": "A dedicated, unglazed zisha pot is an option for unflavored black tea. Keep scented teas in glass or glazed ware.",
+      "sources": [
+        {
+          "label": "TeaVivre · Yixing vessel guidance",
+          "url": "https://www.teavivre.com/info/choose-proper-yixing-teapot-for-your-tea.html"
+        }
+      ]
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha · house",
+      "teaType": "Whisked green tea",
+      "tea": 5,
+      "water": 50,
+      "temp": 70,
+      "steeps": [],
+      "waterProfile": "matcha-water",
+      "notes": "Sift matcha, add water, then whisk until smooth and lightly foamy.",
+      "subcategory": "Matcha",
+      "sourceNote": "House recipe · editable starting point.",
+      "methods": [
+        {
+          "id": "house",
+          "name": "Chawan",
+          "vessel": "chawan",
+          "tea": 5,
+          "water": 50,
+          "temp": 70,
+          "steeps": [],
+          "steepTemps": [],
+          "presets": [
+            30,
+            40,
+            50,
+            60
+          ],
+          "sourceNote": "House recipe · editable starting point.",
+          "preparation": [
+            "Sift matcha, add water, then whisk until smooth and lightly foamy."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hibiki-genmaicha",
+      "name": "Genmaicha",
+      "teaType": "Hibiki-an",
+      "subcategory": "Japanese green",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 80,
+      "steeps": [
+        60,
+        45,
+        75
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-genmaicha-matcha",
+      "name": "Genmaicha Matcha-iri",
+      "teaType": "Hibiki-an",
+      "subcategory": "Japanese green",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 80,
+      "steeps": [
+        60,
+        45,
+        75
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-houjicha",
+      "name": "Houjicha",
+      "teaType": "Hibiki-an",
+      "subcategory": "Roasted tea",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 100,
+      "steeps": [
+        20,
+        15,
+        30
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 100,
+          "steeps": [
+            20,
+            15,
+            30
+          ],
+          "steepTemps": [
+            100,
+            100,
+            100
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 100,
+          "steeps": [
+            20,
+            15,
+            30
+          ],
+          "steepTemps": [
+            100,
+            100,
+            100
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-houjicha-karigane",
+      "name": "Houjicha Karigane",
+      "teaType": "Hibiki-an",
+      "subcategory": "Roasted tea",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 100,
+      "steeps": [
+        20,
+        15,
+        30
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 100,
+          "steeps": [
+            20,
+            15,
+            30
+          ],
+          "steepTemps": [
+            100,
+            100,
+            100
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 100,
+          "steeps": [
+            20,
+            15,
+            30
+          ],
+          "steepTemps": [
+            100,
+            100,
+            100
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-gyokuro",
+      "name": "Gyokuro Superior",
+      "teaType": "Hibiki-an",
+      "subcategory": "Japanese green",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 65,
+      "steeps": [
+        105,
+        60,
+        120
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 65,
+          "steeps": [
+            105,
+            60,
+            120
+          ],
+          "steepTemps": [
+            65,
+            65,
+            70
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 65,
+          "steeps": [
+            105,
+            60,
+            120
+          ],
+          "steepTemps": [
+            65,
+            65,
+            70
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-sencha",
+      "name": "Sencha Superior",
+      "teaType": "Hibiki-an",
+      "subcategory": "Japanese green",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 80,
+      "steeps": [
+        60,
+        45,
+        75
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            60,
+            45,
+            75
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Kyusu is the primary choice. A glass pot needs a suitable strainer. Gaiwan and zisha are not offered as defaults for these Japanese leaves."
+    },
+    {
+      "id": "hibiki-fukamushi",
+      "name": "Sencha Fukamushi Superior",
+      "teaType": "Hibiki-an",
+      "subcategory": "Japanese green",
+      "tea": 7.5,
+      "water": 200,
+      "temp": 80,
+      "steeps": [
+        45,
+        30,
+        60
+      ],
+      "waterProfile": "delicate",
+      "methods": [
+        {
+          "id": "kyusu",
+          "name": "Kyusu",
+          "vessel": "kyusu",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            45,
+            30,
+            60
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            100,
+            150,
+            200,
+            250
+          ],
+          "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 7.5,
+          "water": 200,
+          "temp": 80,
+          "steeps": [
+            45,
+            30,
+            60
+          ],
+          "steepTemps": [
+            80,
+            80,
+            85
+          ],
+          "presets": [
+            150,
+            200,
+            250,
+            300
+          ],
+          "sourceNote": "Glass-vessel adaptation of the vendor ratio; not a separate vendor method.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "notes": "From your Hibiki-an tasting set.",
+      "sourceNote": "Vendor first infusion; later timers are adjustable adaptations.",
+      "sources": [
+        {
+          "label": "Hibiki-an · brewing parameters",
+          "url": "https://www.hibiki-an.com/contents.php/cnID/33"
+        },
+        {
+          "label": "Hibiki-an · repeat infusions",
+          "url": "https://www.hibiki-an.com/sp/contents.php/cnID/3"
+        },
+        {
+          "label": "Hibiki-an · teaware",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/42"
+        }
+      ],
+      "vesselGuidance": "Use a kyusu with a filter suited to fine leaf fragments. The glass option requires a fine strainer. A filterless gaiwan is awkward for this tea."
+    },
+    {
+      "id": "hibiki-matcha-pinnacle",
+      "name": "Matcha Pinnacle",
+      "teaType": "Hibiki-an",
+      "subcategory": "Matcha",
+      "tea": 2,
+      "water": 70,
+      "temp": 80,
+      "steeps": [],
+      "methods": [
+        {
+          "id": "usucha",
+          "name": "Chawan · usucha",
+          "vessel": "chawan",
+          "tea": 2,
+          "water": 70,
+          "temp": 80,
+          "steeps": [],
+          "steepTemps": [],
+          "presets": [
+            40,
+            50,
+            70,
+            100
+          ],
+          "sourceNote": "Vendor usucha recipe.",
+          "preparation": [
+            "Sift the matcha into a chawan.",
+            "Add the measured hot water. Whisk briskly with a bamboo chasen, using a W motion, until foamy.",
+            "Drink promptly."
+          ]
+        },
+        {
+          "id": "koicha",
+          "name": "Chawan · koicha",
+          "vessel": "chawan",
+          "tea": 4,
+          "water": 50,
+          "temp": 80,
+          "steeps": [],
+          "steepTemps": [],
+          "presets": [
+            30,
+            40,
+            50,
+            60
+          ],
+          "sourceNote": "Vendor koicha ratio; 80°C is our starting temperature (vendor does not specify it for koicha).",
+          "preparation": [
+            "Sift matcha into a chawan.",
+            "Add water and knead gently with a chasen until smooth. Do not whisk for foam."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "30 g tin in your inventory.",
+      "vesselGuidance": "Prepare in a chawan with a chasen. This is whisked powder, not a leaf infusion.",
+      "sourceNote": "Vendor preparation with a separate koicha option.",
+      "sources": [
+        {
+          "label": "Hibiki-an · Matcha Pinnacle",
+          "url": "https://www.hibiki-an.com/product_info.php/products_id/432"
+        },
+        {
+          "label": "Hibiki-an · matcha preparation",
+          "url": "https://www.hibiki-an.com/getting_started.php/cnID/50"
+        }
+      ]
+    },
+    {
+      "id": "ys-moonlight-pavilion",
+      "name": "Moonlight Pavilion Pure Bud Bi Luo Chun",
+      "teaType": "Yunnan Sourcing · Spring 2026",
+      "subcategory": "White tea",
+      "tea": 3,
+      "water": 100,
+      "temp": 80,
+      "steeps": [
+        20,
+        25,
+        35,
+        50
+      ],
+      "methods": [
+        {
+          "id": "gaiwan",
+          "name": "Porcelain gaiwan",
+          "vessel": "gaiwan",
+          "tea": 3,
+          "water": 100,
+          "temp": 80,
+          "steeps": [
+            20,
+            25,
+            35,
+            50
+          ],
+          "steepTemps": [
+            80,
+            80,
+            80,
+            80
+          ],
+          "presets": [
+            80,
+            100,
+            110,
+            150
+          ],
+          "sourceNote": "Adapted starting point. Product reviews favor cooler water; the vendor supplies no complete schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 3,
+          "water": 250,
+          "temp": 80,
+          "steeps": [
+            120,
+            150,
+            180
+          ],
+          "steepTemps": [
+            80,
+            80,
+            80
+          ],
+          "presets": [
+            150,
+            250,
+            300,
+            400
+          ],
+          "sourceNote": "Adapted starting point. Product reviews favor cooler water; the vendor supplies no complete schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "From your Spring 2026 selection. Taste each infusion and adjust the next one.",
+      "sourceNote": "Adapted starting point. Product reviews favor cooler water; the vendor supplies no complete schedule.",
+      "vesselGuidance": "Porcelain gaiwan and glass preserve a neutral starting point for these young white teas. Zisha is an optional personal experiment, not a recommended default here.",
+      "sources": [
+        {
+          "label": "Yunnan Sourcing · product and Q&A",
+          "url": "https://yunnansourcing.com/products/moonlight-pavilion-pure-bud-bi-luo-chun-white-tea"
+        },
+        {
+          "label": "TeaVivre · Silver Needle reference",
+          "url": "https://www.teavivre.com/organic-silver-needle-white-tea.html"
+        },
+        {
+          "label": "TeaVivre · white-tea vessels",
+          "url": "https://www.teavivre.com/info/how-to-choose-right-teaware-for-different-types-of-white-tea.html"
+        }
+      ]
+    },
+    {
+      "id": "ys-purple-moonlight",
+      "name": "Wild Tree Purple Moonlight · Jinggu",
+      "teaType": "Yunnan Sourcing · Spring 2026",
+      "subcategory": "White tea",
+      "tea": 5,
+      "water": 110,
+      "temp": 85,
+      "steeps": [
+        30,
+        40,
+        50,
+        60
+      ],
+      "methods": [
+        {
+          "id": "gaiwan",
+          "name": "Porcelain gaiwan",
+          "vessel": "gaiwan",
+          "tea": 5,
+          "water": 110,
+          "temp": 85,
+          "steeps": [
+            30,
+            40,
+            50,
+            60
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            80,
+            100,
+            110,
+            150
+          ],
+          "sourceNote": "Tea-style adaptation from published white-tea guidance; not a product-specific vendor schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 3,
+          "water": 300,
+          "temp": 85,
+          "steeps": [
+            180,
+            240,
+            300
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            150,
+            250,
+            300,
+            400
+          ],
+          "sourceNote": "Tea-style adaptation from published white-tea guidance; not a product-specific vendor schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "From your Spring 2026 selection. Taste each infusion and adjust the next one.",
+      "sourceNote": "Tea-style adaptation from published white-tea guidance; not a product-specific vendor schedule.",
+      "vesselGuidance": "Porcelain gaiwan and glass preserve a neutral starting point for these young white teas. Zisha is an optional personal experiment, not a recommended default here.",
+      "sources": [
+        {
+          "label": "Yunnan Sourcing · product and Q&A",
+          "url": "https://yunnansourcing.com/products/wild-tree-purple-moonlight-white-tea-from-jinggu"
+        },
+        {
+          "label": "TeaVivre · Silver Needle reference",
+          "url": "https://www.teavivre.com/organic-silver-needle-white-tea.html"
+        },
+        {
+          "label": "TeaVivre · white-tea vessels",
+          "url": "https://www.teavivre.com/info/how-to-choose-right-teaware-for-different-types-of-white-tea.html"
+        }
+      ]
+    },
+    {
+      "id": "ys-sweet-ya-bao",
+      "name": "Wild Tree Purple Sweet Ya Bao",
+      "teaType": "Yunnan Sourcing · Spring 2026",
+      "subcategory": "White tea",
+      "tea": 5,
+      "water": 100,
+      "temp": 85,
+      "steeps": [
+        20,
+        25,
+        35,
+        50
+      ],
+      "methods": [
+        {
+          "id": "gaiwan",
+          "name": "Porcelain gaiwan",
+          "vessel": "gaiwan",
+          "tea": 5,
+          "water": 100,
+          "temp": 85,
+          "steeps": [
+            20,
+            25,
+            35,
+            50
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            80,
+            100,
+            110,
+            150
+          ],
+          "sourceNote": "Vendor Q&A: 5 g / 100 mL, 85–90°C, short infusions. Exact timers and glass recipe are adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 4,
+          "water": 250,
+          "temp": 85,
+          "steeps": [
+            180,
+            240,
+            300
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            150,
+            250,
+            300,
+            400
+          ],
+          "sourceNote": "Vendor Q&A: 5 g / 100 mL, 85–90°C, short infusions. Exact timers and glass recipe are adaptations.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "From your Spring 2026 selection. Taste each infusion and adjust the next one.",
+      "sourceNote": "Vendor Q&A: 5 g / 100 mL, 85–90°C, short infusions. Exact timers and glass recipe are adaptations.",
+      "vesselGuidance": "Porcelain gaiwan and glass preserve a neutral starting point for these young white teas. Zisha is an optional personal experiment, not a recommended default here.",
+      "sources": [
+        {
+          "label": "Yunnan Sourcing · product and Q&A",
+          "url": "https://yunnansourcing.com/products/wild-tree-purple-sweet-ya-bao-white-tea"
+        },
+        {
+          "label": "TeaVivre · Silver Needle reference",
+          "url": "https://www.teavivre.com/organic-silver-needle-white-tea.html"
+        },
+        {
+          "label": "TeaVivre · white-tea vessels",
+          "url": "https://www.teavivre.com/info/how-to-choose-right-teaware-for-different-types-of-white-tea.html"
+        }
+      ]
+    },
+    {
+      "id": "ys-silver-needle",
+      "name": "Imperial Silver Needle · Jinggu",
+      "teaType": "Yunnan Sourcing · Spring 2026",
+      "subcategory": "White tea",
+      "tea": 5,
+      "water": 110,
+      "temp": 85,
+      "steeps": [
+        30,
+        40,
+        50,
+        60,
+        80,
+        100,
+        120,
+        150,
+        180
+      ],
+      "methods": [
+        {
+          "id": "gaiwan",
+          "name": "Porcelain gaiwan",
+          "vessel": "gaiwan",
+          "tea": 5,
+          "water": 110,
+          "temp": 85,
+          "steeps": [
+            30,
+            40,
+            50,
+            60,
+            80,
+            100,
+            120,
+            150,
+            180
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85,
+            85,
+            85,
+            85,
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            80,
+            100,
+            110,
+            150
+          ],
+          "sourceNote": "Adapted from TeaVivre’s Fuding Silver Needle guidance to your Jinggu tea; not Yunnan Sourcing’s own schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 2,
+          "water": 250,
+          "temp": 85,
+          "steeps": [
+            240,
+            300,
+            360
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            150,
+            250,
+            300,
+            400
+          ],
+          "sourceNote": "Adapted from TeaVivre’s Fuding Silver Needle guidance to your Jinggu tea; not Yunnan Sourcing’s own schedule.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "From your Spring 2026 selection. Taste each infusion and adjust the next one.",
+      "sourceNote": "Adapted from TeaVivre’s Fuding Silver Needle guidance to your Jinggu tea; not Yunnan Sourcing’s own schedule.",
+      "vesselGuidance": "Porcelain gaiwan and glass preserve a neutral starting point for these young white teas. Zisha is an optional personal experiment, not a recommended default here.",
+      "sources": [
+        {
+          "label": "Yunnan Sourcing · product and Q&A",
+          "url": "https://yunnansourcing.com/products/imperial-grade-silver-needle-white-tea-of-jinggu"
+        },
+        {
+          "label": "TeaVivre · Silver Needle reference",
+          "url": "https://www.teavivre.com/organic-silver-needle-white-tea.html"
+        },
+        {
+          "label": "TeaVivre · white-tea vessels",
+          "url": "https://www.teavivre.com/info/how-to-choose-right-teaware-for-different-types-of-white-tea.html"
+        }
+      ]
+    },
+    {
+      "id": "ys-jade-earrings",
+      "name": "Jade Earrings · Hand-Rolled White Tea",
+      "teaType": "Yunnan Sourcing · Spring 2026",
+      "subcategory": "White tea",
+      "tea": 3,
+      "water": 100,
+      "temp": 85,
+      "steeps": [
+        15,
+        20,
+        30,
+        45
+      ],
+      "methods": [
+        {
+          "id": "gaiwan",
+          "name": "Porcelain gaiwan",
+          "vessel": "gaiwan",
+          "tea": 3,
+          "water": 100,
+          "temp": 85,
+          "steeps": [
+            15,
+            20,
+            30,
+            45
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            80,
+            100,
+            110,
+            150
+          ],
+          "sourceNote": "Adapted from customer brewing reports on the product page; these are not vendor-issued parameters.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        },
+        {
+          "id": "glass",
+          "name": "Glass teapot",
+          "vessel": "glass",
+          "tea": 3,
+          "water": 250,
+          "temp": 85,
+          "steeps": [
+            180,
+            240,
+            300
+          ],
+          "steepTemps": [
+            85,
+            85,
+            85
+          ],
+          "presets": [
+            150,
+            250,
+            300,
+            400
+          ],
+          "sourceNote": "Adapted from customer brewing reports on the product page; these are not vendor-issued parameters.",
+          "preparation": [
+            "Measure leaves and water for the selected vessel.",
+            "Infuse, then drain completely into a cup or pitcher."
+          ]
+        }
+      ],
+      "waterProfile": "matcha-water",
+      "notes": "From your Spring 2026 selection. Taste each infusion and adjust the next one.",
+      "sourceNote": "Adapted from customer brewing reports on the product page; these are not vendor-issued parameters.",
+      "vesselGuidance": "Porcelain gaiwan and glass preserve a neutral starting point for these young white teas. Zisha is an optional personal experiment, not a recommended default here.",
+      "sources": [
+        {
+          "label": "Yunnan Sourcing · product and Q&A",
+          "url": "https://yunnansourcing.com/products/jade-earrings-superior-hand-rolled-white-tea-of-simao"
+        },
+        {
+          "label": "TeaVivre · Silver Needle reference",
+          "url": "https://www.teavivre.com/organic-silver-needle-white-tea.html"
+        },
+        {
+          "label": "TeaVivre · white-tea vessels",
+          "url": "https://www.teavivre.com/info/how-to-choose-right-teaware-for-different-types-of-white-tea.html"
+        }
+      ]
+    }
+  ],
+  "coffee": [
+    {
+      "id": "v60",
+      "name": "V60",
+      "brewer": "Hario V60 · starter recipe",
+      "dose": 20,
+      "water": 300,
+      "grind": "Medium-fine",
+      "temp": 93,
+      "targetTime": 180,
+      "bloom": 50,
+      "bloomTime": 45,
+      "pours": [
+        {
+          "label": "Bloom",
+          "amount": 50,
+          "time": 0
+        },
+        {
+          "label": "Pour to",
+          "amount": 150,
+          "time": 45
+        },
+        {
+          "label": "Pour to",
+          "amount": 250,
+          "time": 90
+        },
+        {
+          "label": "Finish at",
+          "amount": 300,
+          "time": 130
+        }
+      ],
+      "waterProfile": "robust",
+      "notes": "Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative.",
+      "subcategory": "Pourover"
+    },
+    {
+      "id": "origami",
+      "name": "Origami",
+      "brewer": "Origami dripper · starter recipe",
+      "dose": 20,
+      "water": 300,
+      "grind": "Medium",
+      "temp": 92,
+      "targetTime": 180,
+      "bloom": 50,
+      "bloomTime": 40,
+      "pours": [
+        {
+          "label": "Bloom",
+          "amount": 50,
+          "time": 0
+        },
+        {
+          "label": "Pour to",
+          "amount": 150,
+          "time": 40
+        },
+        {
+          "label": "Finish at",
+          "amount": 300,
+          "time": 100
+        }
+      ],
+      "waterProfile": "delicate",
+      "notes": "A balanced starting point. Adjust grind to control drawdown.",
+      "subcategory": "Pourover"
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "brewer": "Decent · starter recipe",
+      "dose": 18,
+      "water": 36,
+      "grind": "Fine; adjust to flow",
+      "temp": 93,
+      "targetTime": 28,
+      "bloom": 0,
+      "bloomTime": 0,
+      "pours": [],
+      "waterProfile": "robust",
+      "notes": "The 36 g water/output field represents espresso yield. Aim for a 1:2 brew ratio; adjust to taste.",
+      "subcategory": "Espresso"
+    }
+  ],
+  "water": [
+    {
+      "id": "robust",
+      "name": "Robust water",
+      "subcategory": "Brew water",
+      "waterKind": "brew",
+      "baseAmount": 2,
+      "baseUnit": "L",
+      "description": "Distilled water + buffer + hardness",
+      "example": false,
+      "ingredients": [
+        {
+          "name": "Distilled water",
+          "amount": 2,
+          "unit": "L"
+        },
+        {
+          "name": "Buffer concentrate",
+          "amount": 7,
+          "unit": "g",
+          "recipeId": "buffer-concentrate"
+        },
+        {
+          "name": "Hardness concentrate",
+          "amount": 5,
+          "unit": "g",
+          "recipeId": "hardness-concentrate"
+        }
+      ],
+      "composition": "Your formula, scaled from 2 L of starting distilled water. Concentrates are added on top.",
+      "notes": "Select the starting distilled-water volume. Do not top up to a final volume: the concentrate additions are extra.",
+      "preparation": [
+        "Measure the displayed distilled water.",
+        "Weigh in the buffer and hardness concentrates, then mix thoroughly."
+      ]
+    },
+    {
+      "id": "delicate",
+      "name": "Delicate water",
+      "subcategory": "Brew water",
+      "waterKind": "brew",
+      "baseAmount": 2,
+      "baseUnit": "L",
+      "description": "Distilled water + buffer + hardness",
+      "example": false,
+      "ingredients": [
+        {
+          "name": "Distilled water",
+          "amount": 2,
+          "unit": "L"
+        },
+        {
+          "name": "Buffer concentrate",
+          "amount": 3,
+          "unit": "g",
+          "recipeId": "buffer-concentrate"
+        },
+        {
+          "name": "Hardness concentrate",
+          "amount": 3,
+          "unit": "g",
+          "recipeId": "hardness-concentrate"
+        }
+      ],
+      "composition": "Your formula, scaled from 2 L of starting distilled water. Concentrates are added on top.",
+      "notes": "Select the starting distilled-water volume. Do not top up to a final volume: the concentrate additions are extra.",
+      "preparation": [
+        "Measure the displayed distilled water.",
+        "Weigh in the buffer and hardness concentrates, then mix thoroughly."
+      ]
+    },
+    {
+      "id": "matcha-water",
+      "name": "Soft water",
+      "subcategory": "Brew water",
+      "waterKind": "brew",
+      "baseAmount": 2,
+      "baseUnit": "L",
+      "description": "Distilled water + buffer + hardness",
+      "example": false,
+      "ingredients": [
+        {
+          "name": "Distilled water",
+          "amount": 2,
+          "unit": "L"
+        },
+        {
+          "name": "Buffer concentrate",
+          "amount": 2,
+          "unit": "g",
+          "recipeId": "buffer-concentrate"
+        },
+        {
+          "name": "Hardness concentrate",
+          "amount": 2,
+          "unit": "g",
+          "recipeId": "hardness-concentrate"
+        }
+      ],
+      "composition": "Your formula, scaled from 2 L of starting distilled water. Concentrates are added on top.",
+      "notes": "Select the starting distilled-water volume. Do not top up to a final volume: the concentrate additions are extra.",
+      "preparation": [
+        "Measure the displayed distilled water.",
+        "Weigh in the buffer and hardness concentrates, then mix thoroughly."
+      ]
+    },
+    {
+      "id": "buffer-concentrate",
+      "name": "Buffer concentrate",
+      "subcategory": "Concentrates",
+      "waterKind": "concentrate",
+      "baseAmount": 200,
+      "baseUnit": "g",
+      "description": "Mineral stock · weighed ingredients",
+      "example": false,
+      "ingredients": [
+        {
+          "name": "Distilled water",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Potassium bicarbonate (KHCO₃)",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "composition": "Starting distilled-water mass, not total solution mass. 204 g stock per standard batch.",
+      "notes": "Use the exact chemical forms listed. Dose the prepared solution by weight when making brew water.",
+      "preparation": [
+        "Weigh the distilled water into a clean container.",
+        "Add the measured salts and stir until fully dissolved. Allow to cool before weighing doses.",
+        "Label the container with its name and preparation date."
+      ]
+    },
+    {
+      "id": "hardness-concentrate",
+      "name": "Hardness concentrate",
+      "subcategory": "Concentrates",
+      "waterKind": "concentrate",
+      "baseAmount": 200,
+      "baseUnit": "g",
+      "description": "Mineral stock · weighed ingredients",
+      "example": false,
+      "ingredients": [
+        {
+          "name": "Distilled water",
+          "amount": 200,
+          "unit": "g"
+        },
+        {
+          "name": "Magnesium chloride hexahydrate (MgCl₂·6H₂O)",
+          "amount": 8,
+          "unit": "g"
+        },
+        {
+          "name": "Calcium chloride anhydrous (CaCl₂)",
+          "amount": 4,
+          "unit": "g"
+        }
+      ],
+      "composition": "Starting distilled-water mass, not total solution mass. 212 g stock per standard batch.",
+      "notes": "Use the exact chemical forms listed. Dose the prepared solution by weight when making brew water.",
+      "preparation": [
+        "Weigh the distilled water into a clean container.",
+        "Add the measured salts and stir until fully dissolved. Allow to cool before weighing doses.",
+        "Label the container with its name and preparation date."
+      ]
+    }
+  ],
+  "drinks": [
+    {
+      "id": "matcha-latte",
+      "name": "Matcha latte",
+      "espressoDose": 0,
+      "espressoYield": 0,
+      "milk": 120,
+      "milkTemp": 60,
+      "sweetener": 10,
+      "ingredients": [
+        {
+          "name": "Matcha",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "name": "Water",
+          "amount": 50,
+          "unit": "g"
+        }
+      ],
+      "milkType": "Oat milk",
+      "sweetenerType": "Honey",
+      "waterTemp": 70,
+      "notes": "House recipe. Adjust sweetness and milk to taste.",
+      "subcategory": "Matcha",
+      "preparation": [
+        "Sift the matcha into a bowl.",
+        "Whisk with the measured water at the listed water temperature, then mix in honey.",
+        "Steam the oat milk to the milk target temperature. Pour over the matcha and serve."
+      ]
+    },
+    {
+      "id": "london-fog",
+      "name": "London Fog",
+      "espressoDose": 0,
+      "espressoYield": 0,
+      "milk": 150,
+      "milkTemp": 60,
+      "sweetener": 10,
+      "ingredients": [
+        {
+          "name": "Earl Grey tea",
+          "amount": 3,
+          "unit": "g"
+        },
+        {
+          "name": "Water",
+          "amount": 150,
+          "unit": "g"
+        },
+        {
+          "name": "Vanilla extract",
+          "amount": 1,
+          "unit": "g"
+        }
+      ],
+      "milkType": "Milk",
+      "sweetenerType": "Sugar",
+      "waterTemp": 95,
+      "notes": "House recipe. Adjust sweetness and milk to taste.",
+      "subcategory": "Black tea",
+      "preparation": [
+        "Steep Earl Grey in the measured hot water for 3 minutes, then strain.",
+        "Stir the sweetener and vanilla into the brewed tea.",
+        "Steam the milk to the target temperature and pour over the tea."
+      ]
+    },
+    {
+      "id": "cortado",
+      "name": "Cortado",
+      "espressoDose": 21,
+      "espressoYield": 42,
+      "milk": 120,
+      "milkTemp": 60,
+      "sweetener": 0,
+      "ingredients": [],
+      "milkType": "Milk",
+      "sweetenerType": "Sweetener",
+      "notes": "House proportions: 42 g espresso to 120 g milk.",
+      "subcategory": "Espresso",
+      "preparation": [
+        "Pull espresso to the listed yield.",
+        "Steam the milk to the target temperature with fine, glossy microfoam.",
+        "Pour the milk into the espresso and serve."
+      ]
+    }
+  ]
+}

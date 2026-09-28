@@ -1,0 +1,26 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.join(__dirname,'..');let now=1000;const storage=new Map();const c={window:null,structuredClone,localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},setInterval:()=>{},Date:{now:()=>now},console};c.window=c;vm.createContext(c);
+for(const file of ['legacy-data.js','brewing.js','storage.js','timer.js'])vm.runInContext(fs.readFileSync(path.join(root,'js',file),'utf8'),c);
+c.SEED=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));
+const seed=JSON.parse(JSON.stringify(c.validateRecipes(c.SEED)));assert.equal(seed.tea.length,18);assert.equal(seed.water.length,5);
+const raw=(type,id)=>({...seed[type].find(r=>r.id===id),type});
+const calc=(r,target,mode)=>r.ingredients.map(i=>i.amount*target/c.recipeScaleBase(r,mode));
+assert.deepEqual(calc(raw('water','robust'),2),[2,7,5]);assert.deepEqual(calc(raw('water','delicate'),2),[2,3,3]);assert.deepEqual(calc(raw('water','matcha-water'),2),[2,2,2]);
+assert.deepEqual(calc(raw('water','robust'),2.35),[2.35,8.225,5.875]);assert.deepEqual(calc(raw('water','buffer-concentrate'),200),[200,4]);assert.deepEqual(calc(raw('water','hardness-concentrate'),400),[400,16,8]);
+assert.deepEqual(Array.from(c.recipePresets(raw('coffee','espresso'),'water')),[30,36,42,54]);
+let matcha=c.teaMethod(raw('tea','hibiki-matcha-pinnacle'),'usucha');assert.equal(matcha.tea,2);assert.equal(matcha.water,70);assert(c.recipePresets(matcha).every(n=>n<=100));
+let silver=c.teaMethod(raw('tea','ys-silver-needle'),'gaiwan'),glass=c.teaMethod(raw('tea','ys-silver-needle'),'glass');assert.equal(silver.water,110);assert.equal(glass.water,250);assert.equal(silver.steeps.length,9);assert.equal(glass.steeps[0],240);
+assert.equal(c.vesselScale(glass),2);assert.equal(c.vesselScale(silver),100/110);assert.equal(c.vesselScale(c.teaMethod(raw('tea','hibiki-sencha'),'kyusu')),1.25);assert.equal(c.vesselScale(c.teaMethod(raw('tea','black-tea'),'zisha')),1.1);assert.equal(c.vesselScale(matcha),1);assert.deepEqual(Array.from(c.recipePresets(silver)),[100,200,300,400,500]);assert.deepEqual(Array.from(c.recipePresets(c.teaMethod(raw('tea','black-tea'),'zisha'))),[110,220,330,440,550]);
+const kyusu=c.teaMethod(raw('tea','hibiki-sencha'),'kyusu');
+let plan=c.teaSession(kyusu,250);assert.equal(plan.count,1);assert.equal(plan.dose,9.375);plan=c.teaSession(kyusu,500);assert.equal(plan.count,2);assert.equal(plan.dose,9.375);assert.equal(plan.steps[1].cumulative,500);assert.equal(plan.steps[1].seconds,45);
+plan=c.teaSession(silver,500);assert.equal(plan.count,5);assert.equal(plan.perSteep,100);assert.equal(plan.steps[4].cumulative,500);assert.equal(plan.dose,5*100/110);
+const ya=c.teaMethod(raw('tea','ys-sweet-ya-bao'),'gaiwan');plan=c.teaSession(ya,500);assert.equal(plan.steps[4].estimated,true);assert.equal(plan.dose,5);
+plan=c.teaSession(glass,235);assert.equal(plan.count,1);assert.equal(plan.perSteep,235);assert.equal(plan.steps[0].cumulative,235);
+for(const [r,n] of [[kyusu,300],[kyusu,125],[silver,150],[silver,600],[glass,199],[glass,501]])assert.throws(()=>c.teaSession(r,n));
+assert.equal(c.teaSession(matcha,70),null);
+const old=JSON.parse(JSON.stringify(c.LEGACY_SEED));old.tea[0].tea=6;old.coffee[0].notes='Keep my custom grind notes';const upgraded=c.upgradeCollection(old,c.SEED,c.LEGACY_SEED);assert.equal(upgraded.tea[0].tea,6);assert.equal(upgraded.coffee[0].notes,'Keep my custom grind notes');assert.equal(upgraded.water[0].ingredients[1].amount,7);assert.equal(upgraded.tea.filter(r=>r.id==='hibiki-matcha-pinnacle').length,1);c.validateRecipes(upgraded);
+let cases=0;for(const mutate of [x=>x.tea[0].tea=-1,x=>x.tea[0].water=0,x=>x.water[0].ingredients[1].amount='7',x=>x.tea[1].id=x.tea[0].id,x=>x.tea[0].methods[0].water=0,x=>x.tea[0].methods[0].vessel='bucket',x=>x.tea[0].methods[0].presets=[0],x=>x.tea[0].methods[0].steepTemps=[80],x=>x.water[0].baseAmount=3,x=>x.tea[0].sources=[{label:'bad',url:'javascript:alert(1)'}]]){const bad=JSON.parse(JSON.stringify(seed));mutate(bad);assert.throws(()=>c.validateRecipes(bad));cases++}
+assert.equal(JSON.stringify(c.validateRecipes(JSON.parse(JSON.stringify(seed)))),JSON.stringify(seed));
+const t=c.BrewTimer;t.start(60,'Test','genmaicha',0);now+=12500;assert.equal(t.remaining(),48);t.pause();now+=60000;assert.equal(t.remaining(),48);t.resume();now+=10000;assert.equal(t.remaining(),38);t.reset();assert.equal(t.remaining(),60);t.resume();now+=61000;t.tick();assert.equal(t.state.finished,true);assert.equal(c.Store.read('timer').finished,true);t.close();
+const sw=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');for(const asset of vm.runInNewContext(sw.match(/const ASSETS=(\[[^;]+\])/)[1]))assert(fs.existsSync(path.join(root,asset)),'Missing cached asset '+asset);
+console.log('PASS: 29 recipes; exact water/concentrate formulas; fractional scaling; session volumes/counts/cumulative totals, fixed leaf doses, extrapolated timings and invalid volumes; method-specific doses/times/presets; custom-data migration; '+cases+' malformed imports; JSON round trip; timers; offline asset completeness.');
