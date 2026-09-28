@@ -13,22 +13,22 @@
   waiting();
   registration.addEventListener('updatefound',()=>{
    const worker=registration.installing;
-   worker?.addEventListener('statechange',()=>{if(worker.state==='installed')waiting()});
+   if(worker)worker.addEventListener('statechange',()=>{if(worker.state==='installed')waiting()});
   });
   navigator.serviceWorker.ready.then(()=>{window.offlineMessage='Ready for offline use on this device.';refresh()});
- }catch{window.offlineMessage='Offline caching unavailable. Open through HTTPS or localhost, then reload.';refresh()}
+ }catch(error){window.offlineMessage='Offline caching unavailable. Open through HTTPS or localhost, then reload.';refresh()}
  async function check(){
   if(!registration)return;
   window.updateMessage='Checking for updates…';refresh();
   try{await registration.update();waiting();if(!registration.waiting)window.updateMessage=registration.installing?'Downloading update…':'No new version found.'}
-  catch{window.updateMessage='Could not check. Reconnect to the internet and try again.'}
+  catch(error){window.updateMessage='Could not check. Reconnect to the internet and try again.'}
   refresh();
  }
  document.addEventListener('click',event=>{
   if(event.target.closest('[data-update-check]'))check();
   if(event.target.closest('[data-update-apply]')){
    if(document.getElementById('modal').open){toast('Save or close your recipe editor first.');return}
-   if(registration?.waiting)registration.waiting.postMessage({type:'SKIP_WAITING'});
+   if((registration&&registration.waiting))registration.waiting.postMessage({type:'SKIP_WAITING'});
    else location.reload();
   }
  });

@@ -4,12 +4,12 @@ window.recipeGroup = function(r) {
   return r.subcategory || (r.type==='water'?'Brew water':r.type==='coffee'?(r.id==='espresso'?'Espresso':'Pourover'):r.type==='tea'?(r.id==='matcha'?'Matcha':'Other tea'):r.espressoYield?'Espresso':'Other drinks');
 };
 window.teaMethod = function(r, id) {
-  if(r.type!=='tea'||!r.methods?.length) return r;
+  if(r.type!=='tea'||!(r.methods&&r.methods.length)) return r;
   const m=r.methods.find(x=>x.id===id)||r.methods[0];
-  return {...r,tea:m.tea,water:m.water,temp:m.temp,steeps:m.steeps,
+  return Object.assign({},r,{tea:m.tea,water:m.water,temp:m.temp,steeps:m.steeps,
     steepTemps:m.steepTemps||m.steeps.map(()=>m.temp),presets:m.presets,
     preparation:m.preparation,sourceNote:m.sourceNote,methodId:m.id,
-    methodName:m.name,vessel:m.vessel};
+    methodName:m.name,vessel:m.vessel});
 };
 window.recipeScaleBase = function(r, mode) {
   if(r.type==='water') return r.baseAmount||1;
@@ -25,23 +25,23 @@ window.baseRecipePresets = function(r, mode) {
   return recipeGroup(r)==='Espresso'?[120,150,180,240]:[150,185,250,350];
 };
 window.upgradeCollection = function(saved, seed, legacy) {
-  const result=structuredClone(saved);
-  const same=(a,b)=>{const clean=x=>JSON.stringify(Object.fromEntries(Object.entries(x).filter(([k])=>k!=='type').sort(([a],[b])=>a.localeCompare(b))));return clean(a)===clean(b)};
+  const result=cloneJSON(saved);
+  const same=(a,b)=>{const clean=x=>JSON.stringify(objectFromPairs(objectEntries(x).filter(([k])=>k!=='type').sort(([a],[b])=>a.localeCompare(b))));return clean(a)===clean(b)};
   for(const type of ['tea','coffee','water','drinks']) {
     result[type]=result[type].map(r=>{
       const next=seed[type].find(x=>x.id===r.id),before=legacy[type].find(x=>x.id===r.id);
-      if(next&&before&&(type==='water'||same(r,before))) return structuredClone(next);
+      if(next&&before&&(type==='water'||same(r,before))) return cloneJSON(next);
       return r;
     });
-    for(const r of seed[type]) if(!legacy[type].some(x=>x.id===r.id)&&!result[type].some(x=>x.id===r.id)) result[type].push(structuredClone(r));
+    for(const r of seed[type]) if(!legacy[type].some(x=>x.id===r.id)&&!result[type].some(x=>x.id===r.id)) result[type].push(cloneJSON(r));
   }
   return result;
 };
 
 window.VESSEL_CAPACITIES = {glass:500,kyusu:250,gaiwan:100,zisha:110};
-window.vesselScale = function(r, capacities=VESSEL_CAPACITIES){return r?.type==='tea'&&r.steeps.length>0?(capacities[r.vessel||'glass']||r.water)/r.water:1};
+window.vesselScale = function(r, capacities=VESSEL_CAPACITIES){return (r&&r.type)==='tea'&&r.steeps.length>0?(capacities[r.vessel||'glass']||r.water)/r.water:1};
 
-window.isLeafSession = r=>r?.type==='tea'&&r.steeps.length>0;
+window.isLeafSession = r=>(r&&r.type)==='tea'&&r.steeps.length>0;
 window.sessionLimits = function(r,capacities=VESSEL_CAPACITIES){
  const vessel=r.vessel||'glass',capacity=capacities[vessel]||r.water;
  return {vessel,capacity,min:vessel==='glass'?Math.min(200,capacity):capacity,max:vessel==='glass'?capacity:capacity*(vessel==='kyusu'?2:5),step:vessel==='glass'?'any':capacity};
@@ -51,8 +51,8 @@ window.teaSession = function(r,total,capacities=VESSEL_CAPACITIES){
  const {vessel,capacity,min,max}=sessionLimits(r,capacities),multiple=total/capacity;
  if(!Number.isFinite(total)||total<min||total>max||(vessel!=='glass'&&Math.abs(multiple-Math.round(multiple))>1e-8))throw Error(vessel==='glass'?`Choose a volume from ${min} to ${max} mL.`:`Choose whole ${capacity} mL steeps, up to ${max} mL.`);
  const count=vessel==='glass'?1:Math.round(multiple),perSteep=vessel==='glass'?total:capacity;
- const last=r.steeps.at(-1),increment=r.steeps.length>1?Math.max(10,last-r.steeps.at(-2)):15;
- const steps=Array.from({length:count},(_,i)=>({seconds:r.steeps[i]??last+increment*(i-r.steeps.length+1),temp:r.steepTemps?.[i]??r.steepTemps?.at(-1)??r.temp,water:perSteep,cumulative:perSteep*(i+1),estimated:i>=r.steeps.length}));
+ const last=r.steeps[r.steeps.length-1],increment=r.steeps.length>1?Math.max(10,last-r.steeps[r.steeps.length-2]):15;
+ const steps=Array.from({length:count},(_,i)=>({seconds:(r.steeps[i]==null?last+increment*(i-r.steeps.length+1):r.steeps[i]),temp:(r.steepTemps&&r.steepTemps[i]!=null?r.steepTemps[i]:r.steepTemps&&r.steepTemps.length?r.steepTemps[r.steepTemps.length-1]:r.temp),water:perSteep,cumulative:perSteep*(i+1),estimated:i>=r.steeps.length}));
  return {count,perSteep,total,dose:r.tea*perSteep/r.water,scale:perSteep/r.water,steps};
 };
 window.recipePresets = function(r,mode,capacities=VESSEL_CAPACITIES){

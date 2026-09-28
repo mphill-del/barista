@@ -96,3 +96,21 @@ This package introduces the new cache naming scheme; obsolete pre-package `baris
 Optional, if Node.js is installed: from this folder run `node tests/core.test.cjs` and `node tests/deployment.test.cjs` before uploading. These validate recipes and offline update behavior. Hosting and using the app do not require Node.js.
 
 For local development only, serve this folder with `python -m http.server 8080 --bind 127.0.0.1` and open `http://127.0.0.1:8080/`. This temporary development server is not needed after deployment. Opening a computer's HTTP LAN address on Android does not provide the secure context needed for PWA installation; use the deployed HTTPS site.
+
+## Older Android tablets — compatibility release
+
+Release `2026-09-28.3-compat` uses ES2017 syntax throughout the app and service worker, with an ES5 startup guard. The intended JavaScript baseline is Chromium 55 or newer (native async/await). This is a code-level target, not a claim of testing on your physical tablet. Browsers below that baseline show a compatibility error rather than hanging. No transpiler, CDN, or new runtime dependency is required.
+
+The guard in index.html runs before any external JavaScript. Dependencies load in order; download failures, parse/runtime exceptions, and startup promise rejections produce an on-screen panel with the user agent, error and file. A 30-second watchdog covers stalled scripts and recipe requests. Optional sound, vibration, wake lock, installation prompts and WebMCP are guarded. Import uses FileReader; recipe cloning and object helpers are local. Older grid/dialog implementations have fallbacks.
+
+To deploy this fix, upload the **entire updated package**, including index.html, js/compat.js, all other js files, css/styles.css, and service-worker.js, together. Wait for GitHub Pages to finish. On the tablet, reconnect, close all Barista tabs and installed-app windows, reopen the site, then reload. If the old interface still works, use Settings → Check for updates → Update & reload. If startup still fails, share a photo of the new error panel; it includes the exact browser version. Do not clear site data as a first step: that can erase tablet-only recipe edits.
+
+Run all checks with Node.js 22 or newer:
+
+```sh
+node tests/core.test.cjs
+node tests/deployment.test.cjs
+node tests/compatibility.test.cjs
+```
+
+The compatibility test uses Node's bundled Acorn parser in ES2017 mode (relaunching itself with --expose-internals), and ES5 mode for the guard/helpers. It also bans the removed modern syntax/APIs and simulates startup failures and older runtime capabilities. Tests require no package installation.

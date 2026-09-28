@@ -1,2 +1,37 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#171a18"><meta name="description" content="Your offline coffee bar recipe companion."><title>Barista · Recipes</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon.svg"><link rel="stylesheet" href="css/styles.css"></head><body><div id="app"></div><aside id="timer" aria-label="Brew timer"></aside><div id="toast" role="status"></div><dialog id="modal"></dialog><script src="js/legacy-data.js"></script><script src="js/brewing.js"></script><script src="js/storage.js"></script><script src="js/timer.js"></script><script src="js/bootstrap.js"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#171a18"><meta name="description" content="Your offline coffee bar recipe companion."><title>Barista · Recipes</title><link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon.svg"><link rel="stylesheet" href="css/styles.css"></head><body><div id="app"><main style="padding:3rem"><h1>Barista</h1><p>Loading your recipes…</p></main></div><aside id="timer" aria-label="Brew timer"></aside><div id="toast" role="status"></div><dialog id="modal"></dialog><section id="startup-error" role="alert" style="display:none;margin:24px;padding:24px;max-width:760px;border:1px solid #ba8d58;background:#202621;color:#f4f0e8;font:16px/1.5 sans-serif;overflow-wrap:break-word"><h1>Barista could not start on this browser.</h1><p><strong>Browser:</strong> <span id="startup-browser"></span></p><p><strong>Error:</strong> <span id="startup-message"></span></p><p><strong>File:</strong> <span id="startup-file"></span></p><p>Take a photo of this panel to share the error. Reconnect and retry after updating the site.</p><button onclick="location.reload()" style="padding:14px 24px">Retry</button></section><noscript><p style="padding:24px">Barista needs JavaScript. Enable JavaScript in your browser settings, then reload.</p></noscript><script>
+(function () {
+ var finished=false, timer;
+ var state=window.BaristaStartup={failed:false,file:'index.html'};
+ function fail(error,file) {
+  if(finished||state.failed)return;
+  state.failed=true;clearTimeout(timer);
+  var panel=document.getElementById('startup-error');
+  panel.style.display='block';
+  document.getElementById('app').style.display='none';
+  document.getElementById('startup-browser').textContent=navigator.userAgent;
+  document.getElementById('startup-message').textContent=error&&error.message?error.message:String(error);
+  document.getElementById('startup-file').textContent=file||state.file||'Unknown';
+ }
+ state.fail=fail;
+ window.onerror=function(message,file,line,column,error){fail(error||message,(file||state.file)+(line?' : '+line+':'+column:''));return false;};
+ window.addEventListener('unhandledrejection',function(event){fail(event.reason||'Unhandled promise rejection',state.file);});
+ window.addEventListener('error',function(event){var target=event.target;if(target&&target!==window&&(target.src||target.href))fail('Dependency failed to load',target.src||target.href);},true);
+ state.done=function(){if(!state.failed){finished=true;clearTimeout(timer);}};
+ state.load=function(file,next){
+  if(state.failed)return;
+  state.file=file;
+  var script=document.createElement('script');script.src='./'+file;script.async=false;
+  script.onerror=function(){fail('Script failed to download or execute',file);};
+  script.onload=function(){if(!state.failed){try{next();}catch(error){fail(error,file);}}};
+  document.body.appendChild(script);
+ };
+ timer=setTimeout(function(){fail('Startup timed out after 30 seconds. Check the connection or retry. The last pending file is listed below.',state.file);},30000);
+ state.load('js/compat.js',function(){
+  checkCompatibility();
+  var files=['js/legacy-data.js','js/brewing.js','js/storage.js','js/timer.js','js/bootstrap.js'],i=0;
+  function next(){if(i<files.length)state.load(files[i++],next);}
+  next();
+ });
+}());
+</script></body></html>

@@ -40,3 +40,11 @@ Run `node tests/core.test.cjs` from the project folder for reproducible logic ch
 - Browser: stopped the static server, reloaded, and opened Robust water with its 2 L / 7 g / 5 g formula intact.
 - Browser: fresh /barista/ subfolder installation loaded all recipes and confirmed offline readiness.
 - GitHub Pages and Cloudflare deployments have not been published to a real account. Android home-screen installation needs the physical tablet.
+
+## Older-Chromium compatibility release
+
+- Every production JS file (including legacy data, updates and the worker) passes an ES2017 parser; the inline startup guard and compat.js pass ES5. Unsupported syntax/API scanning is part of tests/compatibility.test.cjs.
+- Removed optional chaining, nullish coalescing, logical assignment, optional catch bindings, object spread, native deep cloning, at/replaceAll/fromEntries/flatMap/padStart/randomUUID dependencies.
+- Compatibility tests simulate each dependency failing, global parse/runtime exceptions, unhandled rejection, stalled script/data requests, late callbacks, missing required features, JSON helpers and FileReader success/failure.
+- Browser verification on current Chromium: app startup and water recipe editor/save work; an intentionally invalid timer.js shows the actual parse error, filename and line; a missing storage.js shows a dependency error.
+- Hardware limitation: no physical older Android/Chromium is connected. ES2017 parsing and missing-API tests are not equivalent to a full run on the user's tablet.

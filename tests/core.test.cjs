@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
 const root=path.join(__dirname,'..');let now=1000;const storage=new Map();const c={window:null,structuredClone,localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},setInterval:()=>{},Date:{now:()=>now},console};c.window=c;vm.createContext(c);
-for(const file of ['legacy-data.js','brewing.js','storage.js','timer.js'])vm.runInContext(fs.readFileSync(path.join(root,'js',file),'utf8'),c);
+for(const file of ['compat.js','legacy-data.js','brewing.js','storage.js','timer.js'])vm.runInContext(fs.readFileSync(path.join(root,'js',file),'utf8'),c);
 c.SEED=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));
 const seed=JSON.parse(JSON.stringify(c.validateRecipes(c.SEED)));assert.equal(seed.tea.length,18);assert.equal(seed.water.length,5);
 const raw=(type,id)=>({...seed[type].find(r=>r.id===id),type});
