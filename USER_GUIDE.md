@@ -1,3 +1,7 @@
+# Current library workflow
+
+See [README.md](README.md#product-library-ratings-and-insights) for products, ratings, stock filters, and the current import/export behavior. Older recipe-only imports now merge; full backups replace after confirmation.
+
 # Barista usage guide
 
 For hosting, Android installation, and updates, start with [README.md](README.md).
@@ -29,7 +33,7 @@ Calcium concentrate | 2 | g
 Magnesium concentrate | 1.5 | g
 ```
 
-Use Settings > Export JSON for a downloadable backup. To edit externally, open that JSON in a text editor, change values, save valid JSON, then choose Settings > Import JSON. The app validates the whole collection and asks before replacing it. An invalid file leaves the current collection unchanged. Export/import contains recipes; favorites, recent recipes, and settings remain device-local.
+Use Settings > Export full backup to save recipes, products, ratings, personal notes, archive status, favorites and settings. Export catalog makes a publishable collection without personal product data. Import JSON validates and previews the file: catalogs merge by ID, while full backups restore the complete saved collection after confirmation. Invalid files leave existing data unchanged.
 
 The JSON has four arrays: `tea`, `coffee`, `water`, `drinks`. IDs must be unique and stable (letters, numbers, hyphens, underscores). A water profile reference is the ID of a water recipe. Temperatures are stored in Celsius, times in seconds, and water recipes use `baseAmount` and `baseUnit`; ingredient amounts apply to that base batch. Ingredients use `g` or `mL`. Up to 20 steeps per vessel are supported.
 

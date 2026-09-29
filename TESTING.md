@@ -48,3 +48,11 @@ Run `node tests/core.test.cjs` from the project folder for reproducible logic ch
 - Compatibility tests simulate each dependency failing, global parse/runtime exceptions, unhandled rejection, stalled script/data requests, late callbacks, missing required features, JSON helpers and FileReader success/failure.
 - Browser verification on current Chromium: app startup and water recipe editor/save work; an intentionally invalid timer.js shows the actual parse error, filename and line; a missing storage.js shows a dependency error.
 - Hardware limitation: no physical older Android/Chromium is connected. ES2017 parsing and missing-API tests are not equivalent to a full run on the user's tablet.
+
+## Product library release (2026-09-29)
+
+- Core, deployment, compatibility, and library suites pass. All production scripts still parse as ES2017; startup and compatibility helpers remain ES5.
+- Library tests cover 13 migrated inventory teas plus 3 drinks; null/half-star ratings; archived items in analytics; one vote per product across recipes; metadata updates isolated from personal data; invalid product references; merging and deduplicating imports; full backups and the recovery journal; display precision.
+- Browser at 1024 × 600: Explore precedes In rotation, with no home favorites; favorites remain in navigation. Rated a tea 4.5, saved notes, archived it, and verified the Archived filter and Insights included it.
+- Created a test coffee from V60 and added espresso; the second recipe retained the same product rating. Full backup export contained the rating, notes and archive status; restored it through the real file chooser and confirmation UI successfully.
+- Test products and personal scores exist only in the local QA browser, not in published JSON. No physical Decent tablet is attached for hardware verification.

@@ -4,3 +4,6 @@
   Cache-Control: no-cache
 /data/recipes.json
   Cache-Control: no-cache
+
+/data/products.json
+  Cache-Control: no-cache

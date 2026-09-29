@@ -29,7 +29,7 @@
  timer=setTimeout(function(){fail('Startup timed out after 30 seconds. Check the connection or retry. The last pending file is listed below.',state.file);},30000);
  state.load('js/compat.js',function(){
   checkCompatibility();
-  var files=['js/legacy-data.js','js/brewing.js','js/storage.js','js/timer.js','js/bootstrap.js'],i=0;
+  var files=['js/legacy-data.js','js/brewing.js','js/storage.js','js/timer.js','js/library.js','js/library-ui.js','js/transfer.js','js/bootstrap.js'],i=0;
   function next(){if(i<files.length)state.load(files[i++],next);}
   next();
  });

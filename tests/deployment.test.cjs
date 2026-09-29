@@ -17,7 +17,7 @@ for(const base of ['https://example.test/','https://example.test/barista/']){
  async function lifecycle(name){let p;events[name]({waitUntil:v=>p=v});await p}
  await lifecycle('install');assert(!skipped);await lifecycle('activate');assert(claimed);assert(!maps.has(prefix+'old'));assert(maps.has('barista:https://other.test/:old'));
  offline=true;
- for(const rel of ['index.html','data/recipes.json','js/bootstrap.js','js/app.js','js/updates.js','manifest.json']){let p;events.fetch({request:{method:'GET',url:base+rel,mode:'cors'},respondWith:v=>p=v});assert((await p).length>0)}
+ for(const rel of ['index.html','data/recipes.json','data/products.json','js/library.js','js/library-ui.js','js/transfer.js','js/bootstrap.js','js/app.js','js/updates.js','manifest.json']){let p;events.fetch({request:{method:'GET',url:base+rel,mode:'cors'},respondWith:v=>p=v});assert((await p).length>0)}
  let p;events.fetch({request:{method:'GET',url:base+'?home',mode:'navigate'},respondWith:v=>p=v});assert((await p).toString().includes('BaristaStartup'));
  events.message({data:{type:'SKIP_WAITING'}});assert(skipped);
  context.caches.open=async()=>({addAll:async()=>{throw Error('Missing asset')}});await assert.rejects(lifecycle('install'));

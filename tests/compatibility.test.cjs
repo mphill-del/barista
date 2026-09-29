@@ -18,11 +18,11 @@ function startup(){
  context.window=context;context.addEventListener=(event,fn)=>{(listeners[event]||(listeners[event]=[])).push(fn)};vm.createContext(context);vm.runInContext(guard,context);
  return {context,nodes,pending,listeners,timeouts};
 }
-const dependencies=['js/compat.js','js/legacy-data.js','js/brewing.js','js/storage.js','js/timer.js','js/bootstrap.js','js/app.js','js/updates.js'];
+const dependencies=files.filter(file=>file!=='service-worker.js');
 for(const file of dependencies){const t=startup();t.context.BaristaStartup.load(file,()=>{});t.pending[t.pending.length-1].onerror();assert.equal(t.nodes['startup-error'].style.display,'block');assert.equal(t.nodes['startup-file'].textContent,file);assert.equal(t.nodes.app.style.display,'none');assert.equal(t.nodes['startup-browser'].textContent,'Simulated older tablet');}
 for(const message of ['Unexpected token .','Runtime failure']){const t=startup();t.context.onerror(message,'js/brewing.js',7,3);assert(t.nodes['startup-message'].textContent.includes(message));assert(t.nodes['startup-file'].textContent.includes('js/brewing.js'));}
 {const t=startup();t.listeners.unhandledrejection[0]({reason:Error('Rejected startup')});assert.equal(t.nodes['startup-message'].textContent,'Rejected startup');}
-for(const file of ['js/timer.js','data/recipes.json']){const t=startup();t.context.BaristaStartup.file=file;t.timeouts[0]();assert.equal(t.nodes['startup-file'].textContent,file);assert(t.nodes['startup-message'].textContent.includes('30 seconds'));let continued=false;t.context.BaristaStartup.load('later.js',()=>continued=true);assert.equal(t.pending.length,1);assert(!continued);}
+for(const file of ['js/timer.js','data/recipes.json','data/products.json']){const t=startup();t.context.BaristaStartup.file=file;t.timeouts[0]();assert.equal(t.nodes['startup-file'].textContent,file);assert(t.nodes['startup-message'].textContent.includes('30 seconds'));let continued=false;t.context.BaristaStartup.load('later.js',()=>continued=true);assert.equal(t.pending.length,1);assert(!continued);}
 {const t=startup();t.context.BaristaStartup.done();t.timeouts[0]();assert(!t.context.BaristaStartup.failed);}
 {const t=startup();t.context.checkCompatibility=()=>{throw Error('Missing Promise')};t.pending[0].onload();assert.equal(t.nodes['startup-message'].textContent,'Missing Promise');assert.equal(t.pending.length,1);}
 // JSON helpers, merging and brewing with modern conveniences explicitly absent.

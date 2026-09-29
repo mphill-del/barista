@@ -1,0 +1,31 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.join(__dirname,'..'),memory=new Map(),c={window:null,console,document:{addEventListener:()=>{}},localStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)}};c.window=c;vm.createContext(c);
+for(const file of ['compat','storage','library','brewing','transfer'])vm.runInContext(fs.readFileSync(path.join(root,'js',file+'.js'),'utf8'),c);
+c.categories=['coffee','tea','water','drinks'];c.data=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));
+const products=c.validateProducts(JSON.parse(fs.readFileSync(path.join(root,'data/products.json'),'utf8')).products,c.data);
+assert.equal(products.length,16);assert.equal(products.filter(p=>p.type==='tea').length,13);
+c.library={products,personal:{},published:products};c.all=()=>c.categories.flatMap(type=>c.data[type].map(r=>({...r,type})));
+const first=products[0],second=products[1];c.library.personal[first.id]={rating:4.5,status:'archived',notes:'Buy this again'};c.library.personal[second.id]={rating:3,status:'rotation',notes:''};
+let groups=c.analyticsGroups(products,c.library.personal,'tea','brand');assert.equal(groups.length,1);assert.equal(groups[0].count,2);assert.equal(groups[0].average,3.75);
+// A product with two brewing recipes still contributes exactly one rating.
+const coffee=[{...first,id:'coffee-one',type:'coffee',brand:'Example',recipeIds:['v60','espresso']}],personal={'coffee-one':{rating:5,status:'rotation',notes:''}};
+assert.equal(c.analyticsGroups(coffee,personal,'coffee','brand')[0].count,1);
+assert.equal(c.productPreference({},'new').rating,null);assert.equal(c.productPreference({},'new').status,'rotation');
+for(const rating of [0,5.5,2.25,'4',NaN])assert.throws(()=>c.validatePersonal({x:{rating,status:'rotation',notes:''}}));
+c.validatePersonal({x:{rating:.5,status:'archived',notes:''}});
+const changed=JSON.parse(JSON.stringify(products));changed[0].region='New published region';const merged=c.mergeProducts(products,products,changed);assert.equal(merged[0].region,'New published region');assert.equal(c.library.personal[first.id].rating,4.5);assert.equal(c.library.personal[first.id].status,'archived');
+const local=JSON.parse(JSON.stringify(products));local[0].brand='My corrected seller';assert.equal(c.mergeProducts(local,products,changed)[0].brand,'My corrected seller');
+const added={...first,id:'new-product',name:'New purchase'};assert.equal(c.mergeProducts(products,products,products.concat(added)).length,17);
+assert.equal(c.mergeProducts(products,products,[]).length,16);
+assert.throws(()=>c.validateProducts([{...first,recipeIds:['not-a-recipe']}],c.data));assert.throws(()=>c.validateProducts([{...first,recipeIds:['v60']}],c.data));assert.throws(()=>c.validateProducts([first,first],c.data));
+c.validateProducts([{...first,recipeIds:['deleted-recipe']}],c.data,true);
+const incoming={coffee:[],tea:[{...c.data.tea[0],id:'new-tea'}],water:[],drinks:[]};
+let draft=c.prepareTransfer({format:'barista-catalog',version:1,recipes:incoming,products:[{...first,id:'new-tea-product',recipeIds:['new-tea']}]});assert.equal(draft.additions,1);assert.equal(draft.recipes.tea.length,c.data.tea.length+1);assert.equal(draft.library.personal[first.id].notes,'Buy this again');assert.equal(draft.library.products.length,17);
+c.data=draft.recipes;c.library=draft.library;draft=c.prepareTransfer({format:'barista-catalog',version:1,recipes:incoming,products:[{...first,id:'new-tea-product',recipeIds:['new-tea']}]});assert.equal(draft.additions,0);assert.equal(draft.library.products.length,17);
+c.settings={fahrenheit:false,sound:true,vibration:false,awake:false,waterUnit:'g',textSize:'normal',vessels:{glass:500,kyusu:250,gaiwan:100,zisha:110}};c.favorites=['v60'];c.recent=[];c.methodChoices={};
+const backup=c.fullBackup();draft=c.prepareTransfer(JSON.parse(JSON.stringify(backup)));assert.equal(draft.kind,'backup');assert.equal(draft.library.personal[first.id].rating,4.5);assert.equal(draft.library.personal[first.id].status,'archived');assert.equal(draft.settings.vessels.gaiwan,100);
+const bad=JSON.parse(JSON.stringify(backup));bad.library.personal[first.id].rating=10;assert.throws(()=>c.prepareTransfer(bad));
+c.Store.write('pendingTransfer',{recipes:c.data,library:c.library});assert(c.replayTransfer());assert.equal(c.Store.read('pendingTransfer',null),null);assert.equal(c.Store.read('library').personal[first.id].notes,'Buy this again');
+// Quantity display rounds only at the presentation boundary.
+const app=fs.readFileSync(path.join(root,'js/app.js'),'utf8');vm.runInContext(app.match(/const grams=.*?;/)[0]+'\nwindow.displayGrams=grams;',c);assert.equal(c.displayGrams(1.234),'1.2');assert.equal(c.displayGrams(1.26),'1.3');assert(app.includes("(n*scale).toFixed(3)"));assert(!app.includes('Within easy reach'));
+console.log('PASS: inventory migration, half-star validation, archived analytics, one rating per product, publish/local isolation, metadata conflicts, import merge/deduplication, full backup restore, import journal, and weight display precision.');

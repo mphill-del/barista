@@ -1,8 +1,8 @@
 // Change RELEASE for EVERY deployment, including recipe-only edits.
-const RELEASE='2026-09-28.3-compat';
+const RELEASE='2026-09-29.3-library';
 const PREFIX='barista:'+self.registration.scope+':';
 const CACHE=PREFIX+RELEASE;
-const ASSETS=['./','./index.html','./css/styles.css','./js/compat.js','./js/legacy-data.js','./js/brewing.js','./js/storage.js','./js/timer.js','./js/bootstrap.js','./js/app.js','./js/updates.js','./data/recipes.json','./manifest.json','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png'];
+const ASSETS=['./','./index.html','./css/styles.css','./js/library.js','./js/library-ui.js','./js/transfer.js','./data/products.json','./js/compat.js','./js/legacy-data.js','./js/brewing.js','./js/storage.js','./js/timer.js','./js/bootstrap.js','./js/app.js','./js/updates.js','./data/recipes.json','./manifest.json','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png'];
 // Installation succeeds only when the complete release is cached. Bypass HTTP cache.
 self.addEventListener('install',event=>event.waitUntil((async()=>{
  const cache=await caches.open(CACHE);
