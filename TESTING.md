@@ -60,3 +60,9 @@ Run `node tests/core.test.cjs` from the project folder for reproducible logic ch
 ## Purchase workflow validation (2026-10-04)
 
 All six Node test suites pass. The new catalog-update suite verifies six product identities, official metric brewing parameters, repeat application without duplication, preservation of existing recipes, rejection of personal-data fields, and invalid recipe references. The project skill passes the standard skill validator. Both purchase batches were approved. Browser verification at 1024 × 600 confirmed the prominent water recommendation, its working link, and saving the editable infusion guidance. Guidance does not change session planning or timers. No physical Android tablet is attached.
+## Brewing methods release (2026-10-04)
+
+- All six Node suites pass, including ES2017/ES5 parsing, published/local merge, offline caches, and the new assertions for all seven approved Hibiki-an glass recipes.
+- Verified glass genmaicha scales 4 g / 250 mL to 8 g / 500 mL with the same 120-second timer. Kyusu retains 9.375 g across two 250 mL pours, with cumulative 500 mL.
+- Tests cover method guidance overriding legacy shared text, advisory ranges without changing the plan, invalid ranges, and JSON round trips.
+- Browser at 1024 × 600 upgraded through Settings → Update & reload. Confirmed method switching, western guidance, kyusu repeated pours, saving blank optional count fields, and isolation of edited glass guidance from kyusu guidance. No physical older Android tablet is connected.

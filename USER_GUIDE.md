@@ -67,3 +67,5 @@ Sources are saved with recipes and accessible under **Recipe sources & guidance*
 
 
 Tea details show Recommended water directly below the main brew quantities; tap it to open the water formula. Infusions gives total-steep guidance including the first steep, independent of your selected session volume. Edit recipe → Infusion guidance lets you customize it. Blank guidance uses a labeled type/vessel estimate.
+
+Tea vessel choices now name the brewing style. **Typical potential** describes the selected method; **Today** shows your planned pours and cumulative water. The original leaves are reused. Edit a recipe to change that method’s infusion guidance and optional minimum/maximum; those fields never add steeps or increase dose. Glass recipes include optional second-infusion instructions where appropriate.

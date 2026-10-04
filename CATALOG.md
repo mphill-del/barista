@@ -58,3 +58,7 @@ Settings → Export full backup uses `format: "barista-backup"`. It is intended 
 ## Email purchase workflow
 
 See [PURCHASES.md](PURCHASES.md) for Gmail extraction, deduplication, research and approval. `node scripts/catalog-update.cjs <patch.json>` previews a validated patch; add `--apply` for local data-file updates. The tool never commits or pushes.
+
+## Tea method guidance
+
+Tea methods support `infusionGuidance` text and optional `infusionsMin` / `infusionsMax` integers from 1 to 20 (minimum must not exceed maximum). These describe typical total infusions, including the first, rather than changing session volume or timers. Method text overrides legacy recipe-level guidance. Name each method with its brewing style; use independent ratios and times for western, Japanese short-infusion and gongfu methods.

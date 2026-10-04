@@ -9,7 +9,7 @@ window.teaMethod = function(r, id) {
   return Object.assign({},r,{tea:m.tea,water:m.water,temp:m.temp,steeps:m.steeps,
     steepTemps:m.steepTemps||m.steeps.map(()=>m.temp),presets:m.presets,
     preparation:m.preparation,sourceNote:m.sourceNote,methodId:m.id,
-    methodName:m.name,vessel:m.vessel});
+    methodName:m.name,vessel:m.vessel,methodInfusionGuidance:m.infusionGuidance,infusionsMin:m.infusionsMin,infusionsMax:m.infusionsMax});
 };
 window.recipeScaleBase = function(r, mode) {
   if(r.type==='water') return r.baseAmount||1;
@@ -53,7 +53,7 @@ window.teaSession = function(r,total,capacities=VESSEL_CAPACITIES){
  const count=vessel==='glass'?1:Math.round(multiple),perSteep=vessel==='glass'?total:capacity;
  const last=r.steeps[r.steeps.length-1],increment=r.steeps.length>1?Math.max(10,last-r.steeps[r.steeps.length-2]):15;
  const steps=Array.from({length:count},(_,i)=>({seconds:(r.steeps[i]==null?last+increment*(i-r.steeps.length+1):r.steeps[i]),temp:(r.steepTemps&&r.steepTemps[i]!=null?r.steepTemps[i]:r.steepTemps&&r.steepTemps.length?r.steepTemps[r.steepTemps.length-1]:r.temp),water:perSteep,cumulative:perSteep*(i+1),estimated:i>=r.steeps.length}));
- return {count,perSteep,total,dose:r.tea*perSteep/r.water,scale:perSteep/r.water,steps};
+ return {count,perSteep,total,beyondTypical:typeof r.infusionsMax==='number'&&count>r.infusionsMax,dose:r.tea*perSteep/r.water,scale:perSteep/r.water,steps};
 };
 window.recipePresets = function(r,mode,capacities=VESSEL_CAPACITIES){
  if(!isLeafSession(r))return baseRecipePresets(r,mode);
@@ -63,11 +63,12 @@ window.recipePresets = function(r,mode,capacities=VESSEL_CAPACITIES){
 
 // Informational only: never changes session volumes, dose, or timer schedules.
 window.teaInfusionGuidance=function(r){
+ if(r.methodInfusionGuidance)return r.methodInfusionGuidance;
  if(r.infusionGuidance)return r.infusionGuidance;
  if(!r.steeps.length)return 'One preparation; matcha is whisked and consumed, not re-steeped.';
  const group=recipeGroup(r).toLowerCase(),gongfu=['gaiwan','zisha'].includes(r.vessel);
  if(group.includes('white'))return gongfu?'Usually 5-8 total infusions with short steeps (rule of thumb).':'Usually 2-3 total infusions with long steeps (rule of thumb).';
- if(group.includes('green')||group.includes('japanese'))return 'Usually 2-3 total infusions (rule of thumb); later cups are lighter.';
+ if(group.includes('green')||group.includes('japanese')||group.includes('roasted'))return r.vessel==='glass'?'Usually 1-2 total infusions (western-style rule of thumb); later cups are lighter.':'Usually 2-3 total infusions (rule of thumb); later cups are lighter.';
  if(group.includes('black'))return gongfu?'Usually 3-5 total infusions with short steeps (rule of thumb).':'Usually 1-2 total infusions (rule of thumb); second cup is lighter.';
  if(group.includes('herbal')||group.includes('botanical'))return 'Usually one infusion; a second may be much weaker (rule of thumb).';
  return 'Re-steeping potential not specified; saved timings are not a guaranteed infusion limit.';
