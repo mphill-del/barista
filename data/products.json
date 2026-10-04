@@ -224,6 +224,174 @@
       "recipeIds": [
         "cortado"
       ]
+    },
+    {
+      "id": "product-tezumi-kanoyama",
+      "type": "tea",
+      "name": "Kanoyama",
+      "brand": "Tezumi",
+      "country": "Japan",
+      "region": "Wazuka, Kyoto",
+      "cultivar": "Okumidori",
+      "processing": "",
+      "teaType": "Matcha",
+      "recipeIds": [
+        "tezumi-kanoyama"
+      ]
+    },
+    {
+      "id": "product-tezumi-umezuki",
+      "type": "tea",
+      "name": "Umezuki",
+      "brand": "Tezumi",
+      "country": "Japan",
+      "region": "Uji, Kyoto",
+      "cultivar": "Okumidori",
+      "processing": "",
+      "teaType": "Matcha",
+      "recipeIds": [
+        "tezumi-umezuki"
+      ]
+    },
+    {
+      "id": "product-rishi-hibiscus-berry",
+      "type": "tea",
+      "name": "Hibiscus Berry",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "",
+      "region": "",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Blend",
+      "recipeIds": [
+        "rishi-hibiscus-berry"
+      ]
+    },
+    {
+      "id": "product-rishi-english-breakfast",
+      "type": "tea",
+      "name": "English Breakfast",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "",
+      "region": "",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Black",
+      "recipeIds": [
+        "rishi-english-breakfast"
+      ]
+    },
+    {
+      "id": "product-rishi-earl-grey-supreme",
+      "type": "tea",
+      "name": "Earl Grey Supreme",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "China",
+      "region": "Lincang, Yunnan",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Black",
+      "recipeIds": [
+        "rishi-earl-grey-supreme"
+      ]
+    },
+    {
+      "id": "product-elaichi-karak-chai",
+      "type": "drinks",
+      "name": "Karak Chai Blend",
+      "brand": "Fellow",
+      "country": "India",
+      "region": "Assam (tea leaf)",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Blend",
+      "recipeIds": [
+        "elaichi-karak-chai"
+      ]
+    },
+    {
+      "id": "product-tw-los-pirineos-pacamara",
+      "type": "coffee",
+      "name": "Los Pirineos Pacamara",
+      "brand": "Tim Wendelboe",
+      "country": "El Salvador",
+      "region": "Tecapa-Chinameca, Usulutan",
+      "cultivar": "Pacamara",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-los-pirineos-pacamara-v60"
+      ]
+    },
+    {
+      "id": "product-tw-finca-tamana-caturron",
+      "type": "coffee",
+      "name": "Finca Tamana Caturron",
+      "brand": "Tim Wendelboe",
+      "country": "Colombia",
+      "region": "El Pital, Huila",
+      "cultivar": "Caturron",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-finca-tamana-caturron-v60"
+      ]
+    },
+    {
+      "id": "product-tw-echemo-certified-organic",
+      "type": "coffee",
+      "name": "Echemo – Certified Organic",
+      "brand": "Tim Wendelboe",
+      "country": "Ethiopia",
+      "region": "Goma, Jimma",
+      "cultivar": "Ethiopian heirloom (Coche forest)",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-echemo-certified-organic-v60"
+      ]
+    },
+    {
+      "id": "product-tw-gachatha",
+      "type": "coffee",
+      "name": "Gachatha",
+      "brand": "Tim Wendelboe",
+      "country": "Kenya",
+      "region": "Nyeri",
+      "cultivar": "SL28, SL34, Ruiru 11, Batian",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-gachatha-v60"
+      ]
+    },
+    {
+      "id": "product-tw-kapsokisio",
+      "type": "coffee",
+      "name": "Kapsokisio",
+      "brand": "Tim Wendelboe",
+      "country": "Kenya",
+      "region": "Mount Elgon",
+      "cultivar": "K7, SL28, SL34",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-kapsokisio-v60"
+      ]
+    },
+    {
+      "id": "product-tw-finca-el-puente-geisha",
+      "type": "coffee",
+      "name": "Finca El Puente Geisha",
+      "brand": "Tim Wendelboe",
+      "country": "Honduras",
+      "region": "Chinacla, La Paz",
+      "cultivar": "Geisha",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-finca-el-puente-geisha-v60"
+      ]
     }
   ]
 }

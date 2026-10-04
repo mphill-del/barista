@@ -1,5 +1,5 @@
 // Change RELEASE for EVERY deployment, including recipe-only edits.
-const RELEASE='2026-09-29.3-library';
+const RELEASE='2026-10-04.3-brew-guidance';
 const PREFIX='barista:'+self.registration.scope+':';
 const CACHE=PREFIX+RELEASE;
 const ASSETS=['./','./index.html','./css/styles.css','./js/library.js','./js/library-ui.js','./js/transfer.js','./data/products.json','./js/compat.js','./js/legacy-data.js','./js/brewing.js','./js/storage.js','./js/timer.js','./js/bootstrap.js','./js/app.js','./js/updates.js','./data/recipes.json','./manifest.json','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png'];

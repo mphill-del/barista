@@ -2,7 +2,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.join(__dirname,'..');let now=1000;const storage=new Map();const c={window:null,structuredClone,localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},setInterval:()=>{},Date:{now:()=>now},console};c.window=c;vm.createContext(c);
 for(const file of ['compat.js','legacy-data.js','brewing.js','storage.js','timer.js'])vm.runInContext(fs.readFileSync(path.join(root,'js',file),'utf8'),c);
 c.SEED=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));
-const seed=JSON.parse(JSON.stringify(c.validateRecipes(c.SEED)));assert.equal(seed.tea.length,18);assert.equal(seed.water.length,5);
+const seed=JSON.parse(JSON.stringify(c.validateRecipes(c.SEED)));assert(seed.tea.length>=18);assert.equal(seed.water.length,5);
 const raw=(type,id)=>({...seed[type].find(r=>r.id===id),type});
 const calc=(r,target,mode)=>r.ingredients.map(i=>i.amount*target/c.recipeScaleBase(r,mode));
 assert.deepEqual(calc(raw('water','robust'),2),[2,7,5]);assert.deepEqual(calc(raw('water','delicate'),2),[2,3,3]);assert.deepEqual(calc(raw('water','matcha-water'),2),[2,2,2]);
@@ -23,4 +23,4 @@ let cases=0;for(const mutate of [x=>x.tea[0].tea=-1,x=>x.tea[0].water=0,x=>x.wat
 assert.equal(JSON.stringify(c.validateRecipes(JSON.parse(JSON.stringify(seed)))),JSON.stringify(seed));
 const t=c.BrewTimer;t.start(60,'Test','genmaicha',0);now+=12500;assert.equal(t.remaining(),48);t.pause();now+=60000;assert.equal(t.remaining(),48);t.resume();now+=10000;assert.equal(t.remaining(),38);t.reset();assert.equal(t.remaining(),60);t.resume();now+=61000;t.tick();assert.equal(t.state.finished,true);assert.equal(c.Store.read('timer').finished,true);t.close();
 const sw=fs.readFileSync(path.join(root,'service-worker.js'),'utf8');for(const asset of vm.runInNewContext(sw.match(/const ASSETS=(\[[^;]+\])/)[1]))assert(fs.existsSync(path.join(root,asset)),'Missing cached asset '+asset);
-console.log('PASS: 29 recipes; exact water/concentrate formulas; fractional scaling; session volumes/counts/cumulative totals, fixed leaf doses, extrapolated timings and invalid volumes; method-specific doses/times/presets; custom-data migration; '+cases+' malformed imports; JSON round trip; timers; offline asset completeness.');
+console.log('PASS: validated catalog; exact water/concentrate formulas; fractional scaling; session volumes/counts/cumulative totals, fixed leaf doses, extrapolated timings and invalid volumes; method-specific doses/times/presets; custom-data migration; '+cases+' malformed imports; JSON round trip; timers; offline asset completeness.');

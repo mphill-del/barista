@@ -32,6 +32,8 @@ window.validateRecipes=function(value){
  if(type==='tea'){if(!Array.isArray(r.steeps)||r.steeps.length>20)fail('Tea supports up to 20 steeps.');r.steeps.forEach(n=>num(n,'Steep seconds',1,86400))}
  if(type==='coffee'){if(!Array.isArray(r.pours)||r.pours.length>50)fail('Invalid pour schedule.');r.pours.forEach(p=>{str(p.label,'Pour label',true);num(p.amount,'Pour amount');num(p.time,'Pour time',0,86400)})}
  if(type==='water'||type==='drinks'){if(!Array.isArray(r.ingredients)||r.ingredients.length>100)fail('Invalid ingredients.');r.ingredients.forEach(i=>{str(i.name,'Ingredient name',true);num(i.amount,'Ingredient amount');if(!['g','mL',...(type==='water'?['L']:[])].includes(i.unit))fail('Ingredient units must be g or mL (water recipes may also use L).')});if(type==='water'&&typeof r.example!=='boolean')fail('Water example must be true or false.');if(type==='drinks'&&r.waterTemp!==undefined)num(r.waterTemp,'Water temperature',0,150)}
+ if(r.infusionGuidance!==undefined)str(r.infusionGuidance,'Infusion guidance');
+ if(r.waterProfile!==undefined)str(r.waterProfile,'Water profile');
  if(r.subcategory!==undefined)str(r.subcategory,'Subcategory',true);
  if(r.preparation!==undefined){if(!Array.isArray(r.preparation)||r.preparation.length>30)fail('Preparation needs an array of up to 30 steps.');r.preparation.forEach(v=>str(v,'Preparation step',true))}
  if(r.sources!==undefined){if(!Array.isArray(r.sources)||r.sources.length>20)fail('Invalid sources.');r.sources.forEach(s=>{str(s.label,'Source label',true);str(s.url,'Source URL',true);if(!/^https:\/\//.test(s.url))fail('Sources must use HTTPS.')})}

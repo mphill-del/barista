@@ -130,3 +130,5 @@ Ingredient weights display to 0.1 g; concentrate/mineral additions retain 0.001 
 **Settings → Export full backup** includes recipes, products, ratings, personal notes, stock status, favorites, display/vessel settings and saved method choices. Importing a full backup replaces that device's collection after confirmation. The active timer is deliberately not restored from a backup. **Export catalog** omits ratings, personal notes and stock status. Catalog imports (including legacy plain recipe JSON files) merge by stable IDs after a preview instead of replacing the entire collection. Back up before updating existing recipe IDs.
 
 Published changes come through GitHub Pages updates; local notes, ratings and stock status never upload automatically. See [CATALOG.md](CATALOG.md) for the approved-research publishing workflow and file formats.
+
+For researched additions from purchase emails, see [PURCHASES.md](PURCHASES.md). In this project you can ask: "Check my email and add recent purchases to Barista." The workflow prepares a tested review before publication.

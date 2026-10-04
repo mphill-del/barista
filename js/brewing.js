@@ -60,3 +60,15 @@ window.recipePresets = function(r,mode,capacities=VESSEL_CAPACITIES){
  const {vessel,capacity,min,max}=sessionLimits(r,capacities);
  return vessel==='glass'?[...new Set([min,250,300,400,capacity].filter(n=>n>=min&&n<=max))].sort((a,b)=>a-b):Array.from({length:Math.round(max/capacity)},(_,i)=>capacity*(i+1));
 };
+
+// Informational only: never changes session volumes, dose, or timer schedules.
+window.teaInfusionGuidance=function(r){
+ if(r.infusionGuidance)return r.infusionGuidance;
+ if(!r.steeps.length)return 'One preparation; matcha is whisked and consumed, not re-steeped.';
+ const group=recipeGroup(r).toLowerCase(),gongfu=['gaiwan','zisha'].includes(r.vessel);
+ if(group.includes('white'))return gongfu?'Usually 5-8 total infusions with short steeps (rule of thumb).':'Usually 2-3 total infusions with long steeps (rule of thumb).';
+ if(group.includes('green')||group.includes('japanese'))return 'Usually 2-3 total infusions (rule of thumb); later cups are lighter.';
+ if(group.includes('black'))return gongfu?'Usually 3-5 total infusions with short steeps (rule of thumb).':'Usually 1-2 total infusions (rule of thumb); second cup is lighter.';
+ if(group.includes('herbal')||group.includes('botanical'))return 'Usually one infusion; a second may be much weaker (rule of thumb).';
+ return 'Re-steeping potential not specified; saved timings are not a guaranteed infusion limit.';
+};

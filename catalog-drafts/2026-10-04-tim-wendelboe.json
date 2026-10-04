@@ -1,0 +1,385 @@
+{
+  "format": "barista-catalog",
+  "version": 1,
+  "recipes": {
+    "coffee": [
+      {
+        "id": "tw-los-pirineos-pacamara-v60",
+        "name": "Los Pirineos Pacamara · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "robust",
+        "notes": "Producer: Diego Baraona. Fruit-forward profile with berry, stone-fruit and cocoa notes. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/los-pirineos-pacamara"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      },
+      {
+        "id": "tw-finca-tamana-caturron-v60",
+        "name": "Finca Tamana Caturron · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "robust",
+        "notes": "Producers: Elias Roa and Bellanid Sanchez. Distinct herbal pepper character with tropical-fruit and floral notes. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/finca-tamana-caturron"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      },
+      {
+        "id": "tw-echemo-certified-organic-v60",
+        "name": "Echemo – Certified Organic · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "delicate",
+        "notes": "Producer: Khalid Shifa. Floral, tea-like and stone-fruit character. Vendor brewing guidance: if filter drawdown slows, reduce agitation rather than automatically grinding coarser; a longer brew may still taste sweet. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Delicate. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/echemo-certified-organic"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      },
+      {
+        "id": "tw-gachatha-v60",
+        "name": "Gachatha · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "robust",
+        "notes": "Produced by smallholders supplying Gachatha wet mill. Dark-berry and dried-fruit character. This is the Gachatha product, not the separately listed Gachatha Espresso. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/gachatha"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      },
+      {
+        "id": "tw-kapsokisio-v60",
+        "name": "Kapsokisio · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "robust",
+        "notes": "Produced by smallholders supplying Kapsokisio wet mill. Hibiscus, rosehip and red-fruit character. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/kapsokisio"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      },
+      {
+        "id": "tw-finca-el-puente-geisha-v60",
+        "name": "Finca El Puente Geisha · V60",
+        "brewer": "Hario V60 · house starting point",
+        "dose": 20,
+        "water": 300,
+        "grind": "Medium-fine",
+        "temp": 93,
+        "targetTime": 180,
+        "bloom": 50,
+        "bloomTime": 45,
+        "pours": [
+          {
+            "label": "Bloom",
+            "amount": 50,
+            "time": 0
+          },
+          {
+            "label": "Pour to",
+            "amount": 150,
+            "time": 45
+          },
+          {
+            "label": "Pour to",
+            "amount": 250,
+            "time": 90
+          },
+          {
+            "label": "Finish at",
+            "amount": 300,
+            "time": 130
+          }
+        ],
+        "waterProfile": "delicate",
+        "notes": "Producers: Marysabel Caballero and Moises Herrera. Citrus, floral and honey-like profile. Rinse the filter. Swirl gently after the bloom and final pour. Pour amounts are cumulative. Recipe parameters are the existing Barista house starting point, not a verified Tim Wendelboe recipe for this coffee. Adjust by taste; the 3-minute target is not a cutoff. Product metadata checked against the current official page; the email does not verify harvest or roast date.",
+        "subcategory": "Pourover",
+        "sourceNote": "Official product page supports origin, processing, cultivar and producer facts. Dose, temperature, pours, timing and water profile are Barista house settings, not vendor-specific recommendations. House water recommendation: Delicate. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "sources": [
+          {
+            "label": "Tim Wendelboe: product information",
+            "url": "https://timwendelboe.no/products/finca-el-puente-geisha"
+          },
+          {
+            "label": "Tim Wendelboe: filter brewing guide",
+            "url": "https://timwendelboe.no/pages/how-to-brew-pourover-and-filter-coffee"
+          }
+        ]
+      }
+    ],
+    "tea": [],
+    "water": [],
+    "drinks": []
+  },
+  "products": [
+    {
+      "id": "product-tw-los-pirineos-pacamara",
+      "type": "coffee",
+      "name": "Los Pirineos Pacamara",
+      "brand": "Tim Wendelboe",
+      "country": "El Salvador",
+      "region": "Tecapa-Chinameca, Usulutan",
+      "cultivar": "Pacamara",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-los-pirineos-pacamara-v60"
+      ]
+    },
+    {
+      "id": "product-tw-finca-tamana-caturron",
+      "type": "coffee",
+      "name": "Finca Tamana Caturron",
+      "brand": "Tim Wendelboe",
+      "country": "Colombia",
+      "region": "El Pital, Huila",
+      "cultivar": "Caturron",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-finca-tamana-caturron-v60"
+      ]
+    },
+    {
+      "id": "product-tw-echemo-certified-organic",
+      "type": "coffee",
+      "name": "Echemo – Certified Organic",
+      "brand": "Tim Wendelboe",
+      "country": "Ethiopia",
+      "region": "Goma, Jimma",
+      "cultivar": "Ethiopian heirloom (Coche forest)",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-echemo-certified-organic-v60"
+      ]
+    },
+    {
+      "id": "product-tw-gachatha",
+      "type": "coffee",
+      "name": "Gachatha",
+      "brand": "Tim Wendelboe",
+      "country": "Kenya",
+      "region": "Nyeri",
+      "cultivar": "SL28, SL34, Ruiru 11, Batian",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-gachatha-v60"
+      ]
+    },
+    {
+      "id": "product-tw-kapsokisio",
+      "type": "coffee",
+      "name": "Kapsokisio",
+      "brand": "Tim Wendelboe",
+      "country": "Kenya",
+      "region": "Mount Elgon",
+      "cultivar": "K7, SL28, SL34",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-kapsokisio-v60"
+      ]
+    },
+    {
+      "id": "product-tw-finca-el-puente-geisha",
+      "type": "coffee",
+      "name": "Finca El Puente Geisha",
+      "brand": "Tim Wendelboe",
+      "country": "Honduras",
+      "region": "Chinacla, La Paz",
+      "cultivar": "Geisha",
+      "processing": "Washed",
+      "teaType": "",
+      "recipeIds": [
+        "tw-finca-el-puente-geisha-v60"
+      ]
+    }
+  ]
+}

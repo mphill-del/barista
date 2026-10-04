@@ -50,3 +50,5 @@ dialog{width:94vw;max-width:700px}
 .insights-table td:first-child{width:60%}
 @media(max-width:850px){.insights-grid{grid-template-columns:1fr}}
 @supports not (display:grid){.insights-grid{display:block}.insights-grid section{margin-bottom:18px}}
+
+.brew-guidance{margin:-8px 0 22px;padding:15px 18px;background:#1d2627;border:1px solid #344145;border-radius:12px}.water-highlight{display:flex;align-items:center;justify-content:space-between;gap:15px;width:100%;min-height:48px;background:none;text-align:left;padding:0;color:#c1d9dc}.water-highlight span{font-size:14px}.water-highlight strong{font-size:20px;white-space:normal}.brew-guidance p{font-size:14px;line-height:1.6;margin:8px 0 0;color:#b5c2af}

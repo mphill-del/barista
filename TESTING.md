@@ -56,3 +56,7 @@ Run `node tests/core.test.cjs` from the project folder for reproducible logic ch
 - Browser at 1024 × 600: Explore precedes In rotation, with no home favorites; favorites remain in navigation. Rated a tea 4.5, saved notes, archived it, and verified the Archived filter and Insights included it.
 - Created a test coffee from V60 and added espresso; the second recipe retained the same product rating. Full backup export contained the rating, notes and archive status; restored it through the real file chooser and confirmation UI successfully.
 - Test products and personal scores exist only in the local QA browser, not in published JSON. No physical Decent tablet is attached for hardware verification.
+
+## Purchase workflow validation (2026-10-04)
+
+All six Node test suites pass. The new catalog-update suite verifies six product identities, official metric brewing parameters, repeat application without duplication, preservation of existing recipes, rejection of personal-data fields, and invalid recipe references. The project skill passes the standard skill validator. Both purchase batches were approved. Browser verification at 1024 × 600 confirmed the prominent water recommendation, its working link, and saving the editable infusion guidance. Guidance does not change session planning or timers. No physical Android tablet is attached.

@@ -1,0 +1,406 @@
+{
+  "format": "barista-catalog",
+  "version": 1,
+  "recipes": {
+    "coffee": [],
+    "tea": [
+      {
+        "id": "tezumi-kanoyama",
+        "name": "Kanoyama · Tezumi",
+        "subcategory": "Matcha",
+        "teaType": "Matcha",
+        "tea": 2,
+        "water": 70,
+        "temp": 70,
+        "steeps": [],
+        "waterProfile": "matcha-water",
+        "notes": "Okumidori matcha made by Azuma Chaen. Nutty and cocoa-like; grown in Wazuka. One of the two teas in the Classic Matcha Bundle.",
+        "preparation": [
+          "Sift the measured matcha into a chawan.",
+          "Add the measured water at the listed temperature; whisk briskly back and forth for about 20 seconds.",
+          "Drink promptly. Matcha is whisked once, not reinfused."
+        ],
+        "sourceNote": "Vendor recipe: Tezumi specifies 2 g / 70 mL at 70°C, whisked about 20 seconds. Smaller preset is proportional. Soft water is a Barista starting choice. House water recommendation: Soft. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "methods": [
+          {
+            "id": "usucha",
+            "name": "Chawan · usucha",
+            "vessel": "chawan",
+            "tea": 2,
+            "water": 70,
+            "temp": 70,
+            "steeps": [],
+            "steepTemps": [],
+            "presets": [
+              35,
+              70
+            ],
+            "sourceNote": "Vendor recipe: Tezumi specifies 2 g / 70 mL at 70°C, whisked about 20 seconds. Smaller preset is proportional. Soft water is a Barista starting choice. House water recommendation: Soft. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+            "preparation": [
+              "Sift the measured matcha into a chawan.",
+              "Add the measured water at the listed temperature; whisk briskly back and forth for about 20 seconds.",
+              "Drink promptly. Matcha is whisked once, not reinfused."
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Official product and preparation",
+            "url": "https://www.tezumi.com/collections/tea/products/classic-matcha-bundle"
+          }
+        ],
+        "vesselGuidance": "Chawan and bamboo whisk; no teapot infusion.",
+        "infusionGuidance": "One preparation; matcha is whisked and consumed, not re-steeped."
+      },
+      {
+        "id": "tezumi-umezuki",
+        "name": "Umezuki · Tezumi",
+        "subcategory": "Matcha",
+        "teaType": "Matcha",
+        "tea": 2,
+        "water": 70,
+        "temp": 70,
+        "steeps": [],
+        "waterProfile": "matcha-water",
+        "notes": "Okumidori matcha made by Yoshida Meichaen. Fresh, bright profile; traditionally shelf-shaded for 30 days. One of the two teas in the Classic Matcha Bundle.",
+        "preparation": [
+          "Sift the measured matcha into a chawan.",
+          "Add the measured water at the listed temperature; whisk briskly back and forth for about 20 seconds.",
+          "Drink promptly. Matcha is whisked once, not reinfused."
+        ],
+        "sourceNote": "Vendor recipe: Tezumi specifies 2 g / 70 mL at 70°C, whisked about 20 seconds. Smaller preset is proportional. Soft water is a Barista starting choice. House water recommendation: Soft. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "methods": [
+          {
+            "id": "usucha",
+            "name": "Chawan · usucha",
+            "vessel": "chawan",
+            "tea": 2,
+            "water": 70,
+            "temp": 70,
+            "steeps": [],
+            "steepTemps": [],
+            "presets": [
+              35,
+              70
+            ],
+            "sourceNote": "Vendor recipe: Tezumi specifies 2 g / 70 mL at 70°C, whisked about 20 seconds. Smaller preset is proportional. Soft water is a Barista starting choice. House water recommendation: Soft. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+            "preparation": [
+              "Sift the measured matcha into a chawan.",
+              "Add the measured water at the listed temperature; whisk briskly back and forth for about 20 seconds.",
+              "Drink promptly. Matcha is whisked once, not reinfused."
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Official product and preparation",
+            "url": "https://www.tezumi.com/collections/tea/products/classic-matcha-bundle"
+          }
+        ],
+        "vesselGuidance": "Chawan and bamboo whisk; no teapot infusion.",
+        "infusionGuidance": "One preparation; matcha is whisked and consumed, not re-steeped."
+      },
+      {
+        "id": "rishi-hibiscus-berry",
+        "name": "Hibiscus Berry · Rishi",
+        "subcategory": "Herbal / botanical",
+        "teaType": "Herbal / botanical",
+        "tea": 11,
+        "water": 350,
+        "temp": 93,
+        "steeps": [
+          300
+        ],
+        "waterProfile": "delicate",
+        "notes": "Caffeine-free fruit and botanical blend with hibiscus, rosehips, currants, apple and elderberry. Multi-origin blend; country and region are intentionally blank. Vendor precaution: may contain peanut or peanut-shell fragments from intercropping.",
+        "preparation": [
+          "Measure the blend and preheat the glass teapot.",
+          "Add the measured water at the listed temperature and steep for the displayed time.",
+          "Strain completely into a cup or pitcher."
+        ],
+        "sourceNote": "Vendor metric recipe: 11 g / 350 mL at 93°C for 5 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Delicate. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "methods": [
+          {
+            "id": "glass",
+            "name": "Glass teapot",
+            "vessel": "glass",
+            "tea": 11,
+            "water": 350,
+            "temp": 93,
+            "steeps": [
+              300
+            ],
+            "steepTemps": [
+              93
+            ],
+            "presets": [
+              200,
+              250,
+              350,
+              500
+            ],
+            "sourceNote": "Vendor metric recipe: 11 g / 350 mL at 93°C for 5 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Delicate. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+            "preparation": [
+              "Measure the blend and preheat the glass teapot.",
+              "Add the measured water at the listed temperature and steep for the displayed time.",
+              "Strain completely into a cup or pitcher."
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Official product and preparation",
+            "url": "https://www.rishi-tea.com/products/organic-hibiscus-berry-herbal-tea"
+          }
+        ],
+        "vesselGuidance": "Glass selected as an easy-clean, neutral vessel. This entry uses a single western-style infusion; no unsupported gongfu or clay-pot recipe is implied.",
+        "infusionGuidance": "Usually one infusion; a second may be much weaker (botanical-blend rule of thumb)."
+      },
+      {
+        "id": "rishi-english-breakfast",
+        "name": "English Breakfast · Rishi",
+        "subcategory": "Black tea",
+        "teaType": "Black tea",
+        "tea": 10,
+        "water": 350,
+        "temp": 93,
+        "steeps": [
+          240
+        ],
+        "waterProfile": "robust",
+        "notes": "Organic black tea blended from Thailand, Yunnan (China) and Myanmar. Multi-origin blend, so country and region are intentionally blank. Malty body suited to milk. Assamica is a botanical variety, not a verified named cultivar.",
+        "preparation": [
+          "Measure the blend and preheat the glass teapot.",
+          "Add the measured water at the listed temperature and steep for the displayed time.",
+          "Strain completely into a cup or pitcher."
+        ],
+        "sourceNote": "Vendor metric recipe: 10 g / 350 mL at 93°C for 4 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "methods": [
+          {
+            "id": "glass",
+            "name": "Glass teapot",
+            "vessel": "glass",
+            "tea": 10,
+            "water": 350,
+            "temp": 93,
+            "steeps": [
+              240
+            ],
+            "steepTemps": [
+              93
+            ],
+            "presets": [
+              200,
+              250,
+              350,
+              500
+            ],
+            "sourceNote": "Vendor metric recipe: 10 g / 350 mL at 93°C for 4 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+            "preparation": [
+              "Measure the blend and preheat the glass teapot.",
+              "Add the measured water at the listed temperature and steep for the displayed time.",
+              "Strain completely into a cup or pitcher."
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Official product and preparation",
+            "url": "https://www.rishi-tea.com/products/organic-english-breakfast-black-tea"
+          }
+        ],
+        "vesselGuidance": "Glass selected as an easy-clean, neutral vessel. This entry uses a single western-style infusion; no unsupported gongfu or clay-pot recipe is implied.",
+        "infusionGuidance": "Usually 1-2 total infusions, including the first; second cup is lighter (western-style rule of thumb)."
+      },
+      {
+        "id": "rishi-earl-grey-supreme",
+        "name": "Earl Grey Supreme · Rishi",
+        "subcategory": "Black tea",
+        "teaType": "Black tea",
+        "tea": 9,
+        "water": 350,
+        "temp": 93,
+        "steeps": [
+          240
+        ],
+        "waterProfile": "robust",
+        "notes": "Yunnan Dianhong black tea scented with bergamot oil from Calabria, Italy. Country and region describe the tea leaf, not the bergamot. Named cultivar not supplied.",
+        "preparation": [
+          "Measure the blend and preheat the glass teapot.",
+          "Add the measured water at the listed temperature and steep for the displayed time.",
+          "Strain completely into a cup or pitcher."
+        ],
+        "sourceNote": "Vendor metric recipe: 9 g / 350 mL at 93°C for 4 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "methods": [
+          {
+            "id": "glass",
+            "name": "Glass teapot",
+            "vessel": "glass",
+            "tea": 9,
+            "water": 350,
+            "temp": 93,
+            "steeps": [
+              240
+            ],
+            "steepTemps": [
+              93
+            ],
+            "presets": [
+              200,
+              250,
+              350,
+              500
+            ],
+            "sourceNote": "Vendor metric recipe: 9 g / 350 mL at 93°C for 4 minutes. Glass vessel and the water profile are Barista choices; other volumes scale the dose proportionally. Metric values verified in the product page's Imperial/Metric toggle. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+            "preparation": [
+              "Measure the blend and preheat the glass teapot.",
+              "Add the measured water at the listed temperature and steep for the displayed time.",
+              "Strain completely into a cup or pitcher."
+            ]
+          }
+        ],
+        "sources": [
+          {
+            "label": "Official product and preparation",
+            "url": "https://www.rishi-tea.com/products/organic-earl-grey-supreme-black-tea"
+          }
+        ],
+        "vesselGuidance": "Glass selected as an easy-clean, neutral vessel. This entry uses a single western-style infusion; no unsupported gongfu or clay-pot recipe is implied.",
+        "infusionGuidance": "Usually 1-2 total infusions, including the first; second cup is lighter (western-style rule of thumb)."
+      }
+    ],
+    "water": [],
+    "drinks": [
+      {
+        "id": "elaichi-karak-chai",
+        "name": "Karak Chai · elaichi co.",
+        "subcategory": "Chai",
+        "espressoDose": 0,
+        "espressoYield": 0,
+        "milk": 240,
+        "milkTemp": 100,
+        "milkType": "Whole milk",
+        "sweetener": 6,
+        "sweetenerType": "White sugar",
+        "waterTemp": 0,
+        "ingredients": [
+          {
+            "name": "Water",
+            "amount": 120,
+            "unit": "g"
+          },
+          {
+            "name": "Karak Chai Blend (dry volume; 15 mL ≈ 1 tbsp)",
+            "amount": 15,
+            "unit": "mL"
+          }
+        ],
+        "notes": "Made by elaichi co.; sold by Fellow. Organic CTC Assam tea from Chota Tingrai Farm and cardamom from Chemparathy Estate. Whole-milk stovetop version. Ingredient total is only the app's scaling reference, not final beverage yield; evaporation and strained solids reduce yield. For more than two servings, follow the vendor batch guide: cap added water at one cup. Do not use a teapot on the stove.",
+        "sourceNote": "Adapted metric starting point from the vendor's one-cup recipe: 1 cup milk, 1/2 cup water, 1 tbsp blend, 1.5 tsp sugar. Milk/water/sugar are rounded kitchen weight adaptations, not vendor gram measurements. Blend stays a volume measure because its gram weight is unverified. The 100°C milk target denotes stovetop boiling, not steam-wand milk preparation. House water recommendation: Robust. This maps to your concentrate recipes, not a vendor water specification; adjust to taste.",
+        "preparation": [
+          "Use a saucepan with plenty of room for the milk to rise. The listed amounts make roughly one serving; final yield varies.",
+          "Bring the measured whole milk and water to a gentle boil together, watching the pan.",
+          "Add the measured chai blend and sugar. Reduce the heat and simmer gently for 5 minutes, stirring occasionally.",
+          "Ladle a little chai up and gently back into the pan a few times without splashing. Remove from heat, strain and serve."
+        ],
+        "sources": [
+          {
+            "label": "Fellow: ingredients and stovetop brew guide",
+            "url": "https://fellowproducts.com/blogs/brew-talks/fellows-take-on-karak-chai-blend-by-elaichi-co-brew-guide"
+          },
+          {
+            "label": "elaichi co.: original recipe and batch calculator",
+            "url": "https://www.elaichico.com/pages/ultimate-chai-guide"
+          }
+        ],
+        "waterProfile": "robust"
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "product-tezumi-kanoyama",
+      "type": "tea",
+      "name": "Kanoyama",
+      "brand": "Tezumi",
+      "country": "Japan",
+      "region": "Wazuka, Kyoto",
+      "cultivar": "Okumidori",
+      "processing": "",
+      "teaType": "Matcha",
+      "recipeIds": [
+        "tezumi-kanoyama"
+      ]
+    },
+    {
+      "id": "product-tezumi-umezuki",
+      "type": "tea",
+      "name": "Umezuki",
+      "brand": "Tezumi",
+      "country": "Japan",
+      "region": "Uji, Kyoto",
+      "cultivar": "Okumidori",
+      "processing": "",
+      "teaType": "Matcha",
+      "recipeIds": [
+        "tezumi-umezuki"
+      ]
+    },
+    {
+      "id": "product-rishi-hibiscus-berry",
+      "type": "tea",
+      "name": "Hibiscus Berry",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "",
+      "region": "",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Blend",
+      "recipeIds": [
+        "rishi-hibiscus-berry"
+      ]
+    },
+    {
+      "id": "product-rishi-english-breakfast",
+      "type": "tea",
+      "name": "English Breakfast",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "",
+      "region": "",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Black",
+      "recipeIds": [
+        "rishi-english-breakfast"
+      ]
+    },
+    {
+      "id": "product-rishi-earl-grey-supreme",
+      "type": "tea",
+      "name": "Earl Grey Supreme",
+      "brand": "Rishi Tea & Botanicals",
+      "country": "China",
+      "region": "Lincang, Yunnan",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Black",
+      "recipeIds": [
+        "rishi-earl-grey-supreme"
+      ]
+    },
+    {
+      "id": "product-elaichi-karak-chai",
+      "type": "drinks",
+      "name": "Karak Chai Blend",
+      "brand": "Fellow",
+      "country": "India",
+      "region": "Assam (tea leaf)",
+      "cultivar": "",
+      "processing": "",
+      "teaType": "Blend",
+      "recipeIds": [
+        "elaichi-karak-chai"
+      ]
+    }
+  ]
+}

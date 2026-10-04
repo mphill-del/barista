@@ -29,7 +29,7 @@ for(const file of ['js/timer.js','data/recipes.json','data/products.json']){cons
 const c={window:null,console,localStorage:{getItem:()=>null,setItem:()=>{}},setInterval:()=>{}};c.window=c;vm.createContext(c);
 vm.runInContext('Array.prototype.at=undefined; Array.prototype.flatMap=undefined; String.prototype.replaceAll=undefined; Object.fromEntries=undefined;',c);
 for(const file of ['compat','storage','brewing','timer'])vm.runInContext(fs.readFileSync(path.join(root,'js',file+'.js'),'utf8'),c);
-const seed=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));c.validateRecipes(seed);assert.equal(JSON.stringify(c.cloneJSON(seed)),JSON.stringify(seed));assert.equal(c.mergePublished(seed,seed,seed).tea.length,18);
+const seed=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));c.validateRecipes(seed);assert.equal(JSON.stringify(c.cloneJSON(seed)),JSON.stringify(seed));assert.equal(c.mergePublished(seed,seed,seed).tea.length,seed.tea.length);
 const r=c.teaMethod(Object.assign({},seed.tea.find(r=>r.id==='ys-silver-needle'),{type:'tea'}),'gaiwan');assert.equal(c.teaSession(r,500).steps[4].cumulative,500);assert.equal(c.padTwo(5),'05');assert.notEqual(c.newRecipeId(),c.newRecipeId());c.BrewTimer.unlock();
 // FileReader path works without Blob.text, including read failures.
 c.FileReader=function(){this.readAsText=function(){this.result='{"tea":[]}';this.onload()}};

@@ -3,7 +3,7 @@
 1. Give the assistant names, product links, or label photos of your purchases.
 2. Ask for proposed product details and brewing recipes. Keep uncertain metadata blank. Record vendor links in each recipe's existing `sources` field and distinguish vendor instructions from adaptations in `sourceNote`.
 3. Review and approve the actual additions before publication.
-4. Update `data/recipes.json` and `data/products.json` together, keeping their existing entries and stable IDs. Bump `RELEASE` in service-worker.js, run all four test suites, commit, and push.
+4. Update `data/recipes.json` and `data/products.json` together, keeping their existing entries and stable IDs. Bump `RELEASE` in service-worker.js, run all test suites, commit, and push.
 5. Devices receive catalog additions on their next app update. Each new coffee/tea starts in rotation and unrated. Ratings, personal notes and archive status stay local. Published metadata updates apply to unchanged product records; locally edited metadata wins on a conflict.
 
 ## Published files
@@ -54,3 +54,7 @@ Fill the arrays with the validated recipe/product records. Existing IDs are upda
 Settings → Export catalog produces this same envelope with your full catalog. To publish it, put the envelope's `recipes` object in recipes.json and put `{ "version": 1, "products": ... }` in products.json. Review before pushing: recipe notes and public product fields are included, but personal product notes, ratings and status are not.
 
 Settings → Export full backup uses `format: "barista-backup"`. It is intended for restoring a device, not publishing. Never commit a personal backup to GitHub as a catalog. Full restore is validated and confirmed, then staged locally so an interrupted restore can resume at startup.
+
+## Email purchase workflow
+
+See [PURCHASES.md](PURCHASES.md) for Gmail extraction, deduplication, research and approval. `node scripts/catalog-update.cjs <patch.json>` previews a validated patch; add `--apply` for local data-file updates. The tool never commits or pushes.

@@ -65,3 +65,5 @@ Fixed-vessel partial fills are rejected. If a planned session extends beyond the
 
 Sources are saved with recipes and accessible under **Recipe sources & guidance**. All recipe parameters remain available offline; the external source links require a connection. Vendor recommendations, customer reports, and adapted schedules are identified. See RESEARCH.md for the inventory and evidence limitations. House water-profile pairings are preferences, not vendor endorsements of your mineral formulas.
 
+
+Tea details show Recommended water directly below the main brew quantities; tap it to open the water formula. Infusions gives total-steep guidance including the first steep, independent of your selected session volume. Edit recipe → Infusion guidance lets you customize it. Blank guidance uses a labeled type/vessel estimate.
