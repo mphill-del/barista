@@ -18,13 +18,13 @@ function prepareTransfer(value){
   const ids=new Set([].concat.apply([],categories.map(t=>recipes[t].map(r=>r.id))));
   const list=x=>{if(!Array.isArray(x)||x.length>5000||x.some(id=>typeof id!=='string'))throw Error('Invalid saved recipe list.');return x.filter(id=>ids.has(id));};
   const choices=value.methodChoices||{};if(typeof choices!=='object'||Array.isArray(choices)||Object.keys(choices).some(id=>typeof choices[id]!=='string'))throw Error('Invalid saved vessel choices.');
-  return {kind:'backup',recipes:recipes,library:{products:products,personal:personal,published:published},settings:validateBackupSettings(value.settings),favorites:list(value.favorites),recent:list(value.recent||[]),methodChoices:choices};
+  return {kind:'backup',recipes:recipes,library:{products:products,personal:personal,published:published,daily:validateDaily(state.daily)},settings:validateBackupSettings(value.settings),favorites:list(value.favorites),recent:list(value.recent||[]),methodChoices:choices};
  }
  if(value.format&&value.format!=='barista-catalog')throw Error('Unrecognized import format.');
  if(value.format&&value.version!==1)throw Error('Unsupported catalog version.');
  const incoming=validateRecipes(value.recipes||value),recipes=mergeRecipeImport(data,incoming),next=cloneJSON(library),products=validateProducts(value.products||[],recipes);
  products.forEach(p=>{const i=next.products.findIndex(x=>x.id===p.id);if(i<0)next.products.push(p);else {if(next.products[i].type!==p.type)throw Error('A product ID cannot change category.');next.products[i]=p;}});
- validateProducts(next.products,recipes,true);
+ validateProducts(next.products,recipes,true);next.daily=seedPurchaseReminders(next.daily,next.products);
  const incomingIds=[].concat.apply([],categories.map(t=>incoming[t].map(r=>r.id))),existingIds=new Set(all().map(r=>r.id));
  return {kind:'catalog',recipes:recipes,library:next,additions:incomingIds.filter(id=>!existingIds.has(id)).length,updates:incomingIds.filter(id=>existingIds.has(id)).length,productCount:products.length};
 }

@@ -66,3 +66,11 @@ All six Node test suites pass. The new catalog-update suite verifies six product
 - Verified glass genmaicha scales 4 g / 250 mL to 8 g / 500 mL with the same 120-second timer. Kyusu retains 9.375 g across two 250 mL pours, with cumulative 500 mL.
 - Tests cover method guidance overriding legacy shared text, advisory ranges without changing the plan, invalid ranges, and JSON round trips.
 - Browser at 1024 × 600 upgraded through Settings → Update & reload. Confirmed method switching, western guidance, kyusu repeated pours, saving blank optional count fields, and isolation of edited glass guidance from kyusu guidance. No physical older Android tablet is connected.
+
+
+## Reminders and picks release (2026-10-11)
+
+- Seven Node suites cover calendar arithmetic, purchase validation and deduplication, preserved dismissal state, category/stock/drink eligibility, equal product weighting, immediate-repeat avoidance, daily preference validation, and full backup round trips including older backups.
+- Production scripts continue to pass the ES2017 parser and unsupported-API checks. New scripts are included in startup loading and the versioned offline shell.
+- Isolated headless Edge at 1024 x 600: pick/re-pick, Make this, reminder creation with roast-date presets, due notices after reload, snooze, edit, dismissal persistence, drink exclusion persistence, no horizontal overflow, and offline reload/picking all passed without browser errors.
+- No physical older Android tablet is connected. Existing coffees have no inferred purchase dates; UI tests used temporary browser-only reminder data.

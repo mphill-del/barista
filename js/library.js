@@ -14,7 +14,7 @@ window.validateProducts=function(value,recipes,allowMissing=false){
   if(!copy.name)throw Error('A product needs a name.');
   if(!Array.isArray(p.recipeIds)||!p.recipeIds.length||p.recipeIds.length>30||new Set(p.recipeIds).size!==p.recipeIds.length)throw Error('Each product needs 1–30 distinct brewing recipes.');
   if(p.recipeIds.some(id=>typeof id!=='string'||!/^[-a-zA-Z0-9_]{1,100}$/.test(id)||(refs[id]!==p.type&&!(allowMissing&&!refs[id]))))throw Error('Product '+copy.name+' refers to a missing or wrong-category recipe.');
-  copy.recipeIds=p.recipeIds.slice();return copy;
+  if(p.purchases!==undefined){if(p.type!=='coffee')throw Error('Purchase reminders are for coffee.');copy.purchases=validatePurchaseBatches(p.purchases);}copy.recipeIds=p.recipeIds.slice();return copy;
  });
 };
 window.validatePersonal=function(value){

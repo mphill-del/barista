@@ -62,3 +62,18 @@ See [PURCHASES.md](PURCHASES.md) for Gmail extraction, deduplication, research a
 ## Tea method guidance
 
 Tea methods support `infusionGuidance` text and optional `infusionsMin` / `infusionsMax` integers from 1 to 20 (minimum must not exceed maximum). These describe typical total infusions, including the first, rather than changing session volume or timers. Method text overrides legacy recipe-level guidance. Name each method with its brewing style; use independent ratios and times for western, Japanese short-infusion and gongfu methods.
+
+
+## Coffee purchase reminders
+
+Coffee products may include a `purchases` array (maximum 200 batches). For example:
+
+```json
+"purchases": [
+  {"id": "purchase-2026-10-11-1", "purchaseDate": "2026-10-11"}
+]
+```
+
+Each batch has a stable unique ID and a required ISO `purchaseDate`. Optional `roastDate` and `remindDate` use the same YYYY-MM-DD format. The default reminder is 21 days after roast date, or purchase date when roast date is unknown. An explicit `remindDate` overrides that default when first imported. Repeated imports never reset an existing local reminder's dates, snooze or dismissal. For another purchase of the same coffee, retain its product ID and existing batches, and append a new batch ID. Do not include order IDs or private receipt details.
+
+Catalog exports include these public purchase batches. Local reminder actions and picker preferences are included only in full backups. Older backups without these fields remain valid. Existing catalog coffees without purchase dates do not get fabricated reminders.

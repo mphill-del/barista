@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
 const root=path.join(__dirname,'..'),memory=new Map(),c={window:null,console,document:{addEventListener:()=>{}},localStorage:{getItem:k=>memory.get(k)||null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)}};c.window=c;vm.createContext(c);
-for(const file of ['compat','storage','library','brewing','transfer'])vm.runInContext(fs.readFileSync(path.join(root,'js',file+'.js'),'utf8'),c);
+for(const file of ['compat','storage','daily','library','brewing','transfer'])vm.runInContext(fs.readFileSync(path.join(root,'js',file+'.js'),'utf8'),c);
 c.categories=['coffee','tea','water','drinks'];c.data=JSON.parse(fs.readFileSync(path.join(root,'data/recipes.json'),'utf8'));
 const products=c.validateProducts(JSON.parse(fs.readFileSync(path.join(root,'data/products.json'),'utf8')).products,c.data);
 assert(products.length>=16);assert(products.filter(p=>p.type==='tea').length>=13);
@@ -23,7 +23,11 @@ const incoming={coffee:[],tea:[{...c.data.tea[0],id:'new-tea'}],water:[],drinks:
 let draft=c.prepareTransfer({format:'barista-catalog',version:1,recipes:incoming,products:[{...first,id:'new-tea-product',recipeIds:['new-tea']}]});assert.equal(draft.additions,1);assert.equal(draft.recipes.tea.length,c.data.tea.length+1);assert.equal(draft.library.personal[first.id].notes,'Buy this again');assert.equal(draft.library.products.length,products.length+1);
 c.data=draft.recipes;c.library=draft.library;draft=c.prepareTransfer({format:'barista-catalog',version:1,recipes:incoming,products:[{...first,id:'new-tea-product',recipeIds:['new-tea']}]});assert.equal(draft.additions,0);assert.equal(draft.library.products.length,products.length+1);
 c.settings={fahrenheit:false,sound:true,vibration:false,awake:false,waterUnit:'g',textSize:'normal',vessels:{glass:500,kyusu:250,gaiwan:100,zisha:110}};c.favorites=['v60'];c.recent=[];c.methodChoices={};
+c.library.daily=c.validateDaily({pickTypes:['coffee'],excludedDrinkIds:['drink-test'],lastPick:first.id,lastRecipes:{[first.id]:first.recipeIds[0]},reminders:[{id:'batch-test',productId:first.id,purchaseDate:'2026-09-01',roastDate:'',remindDate:'2026-10-20',dismissed:true}]});
 const backup=c.fullBackup();draft=c.prepareTransfer(JSON.parse(JSON.stringify(backup)));assert.equal(draft.kind,'backup');assert.equal(draft.library.personal[first.id].rating,4.5);assert.equal(draft.library.personal[first.id].status,'archived');assert.equal(draft.settings.vessels.gaiwan,100);
+assert.equal(JSON.stringify(draft.library.daily),JSON.stringify(c.library.daily));
+const legacy=JSON.parse(JSON.stringify(backup));delete legacy.library.daily;assert.equal(c.prepareTransfer(legacy).library.daily.reminders.length,0);
+assert.throws(()=>c.validateDaily([]));assert.throws(()=>c.validateDaily('bad'));
 const bad=JSON.parse(JSON.stringify(backup));bad.library.personal[first.id].rating=10;assert.throws(()=>c.prepareTransfer(bad));
 c.Store.write('pendingTransfer',{recipes:c.data,library:c.library});assert(c.replayTransfer());assert.equal(c.Store.read('pendingTransfer',null),null);assert.equal(c.Store.read('library').personal[first.id].notes,'Buy this again');
 // Quantity display rounds only at the presentation boundary.

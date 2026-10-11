@@ -5,12 +5,12 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 function prepare(base, published, patch) {
   const c = {window: null}; c.window = c; vm.createContext(c);
-  ['compat', 'storage', 'library'].forEach(name => vm.runInContext(fs.readFileSync(path.join(root, 'js', name + '.js'), 'utf8'), c));
+  ['compat', 'storage', 'daily', 'library'].forEach(name => vm.runInContext(fs.readFileSync(path.join(root, 'js', name + '.js'), 'utf8'), c));
   if (!patch || patch.format !== 'barista-catalog' || patch.version !== 1) throw Error('Expected a version 1 barista-catalog, never a personal backup.');
   if (Object.keys(patch).some(k => !['format', 'version', 'recipes', 'products'].includes(k))) throw Error('Unexpected catalog fields. Remove private/order data.');
   c.validateRecipes(base); c.validateProducts(published.products, base);
   const recipes = c.mergeRecipeImport(base, c.validateRecipes(patch.recipes));
-  const allowed = ['id', 'type', 'recipeIds'].concat(Array.from(c.PRODUCT_FIELDS));
+  const allowed = ['id', 'type', 'recipeIds', 'purchases'].concat(Array.from(c.PRODUCT_FIELDS));
   patch.products.forEach(p => { if (Object.keys(p).some(k => !allowed.includes(k))) throw Error('Unexpected product fields. Personal data does not belong in the catalog.'); });
   const incoming = c.validateProducts(patch.products, recipes);
   const products = JSON.parse(JSON.stringify(published.products));

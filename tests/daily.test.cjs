@@ -1,0 +1,17 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const c={window:null};c.window=c;vm.createContext(c);['compat','storage','daily','library','brewing'].forEach(n=>vm.runInContext(fs.readFileSync(path.join(__dirname,'../js',n+'.js'),'utf8'),c));
+const data=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/recipes.json'),'utf8')),products=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/products.json'),'utf8')).products;
+assert.equal(c.addReminderDays('2026-10-25',14),'2026-11-08');assert.equal(c.addReminderDays('2026-12-25',14),'2027-01-08');assert(!c.validReminderDate('2026-02-30'));assert(!c.validReminderDate('10/11/2026'));
+const coffee=Object.assign({},products.find(p=>p.type==='coffee'),{purchases:[{id:'batch-one',purchaseDate:'2026-10-01',roastDate:'2026-09-29'}]});
+assert.equal(c.validateProducts([coffee],data)[0].purchases[0].roastDate,'2026-09-29');
+let daily=c.seedPurchaseReminders(null,[coffee]);assert.equal(daily.reminders[0].remindDate,'2026-10-20');daily.reminders[0].dismissed=true;
+assert.equal(c.seedPurchaseReminders(daily,[coffee]).reminders.length,1);assert(c.seedPurchaseReminders(daily,[coffee]).reminders[0].dismissed);
+coffee.purchases.push({id:'batch-two',purchaseDate:'2026-10-10',remindDate:'2026-11-01'});daily=c.seedPurchaseReminders(daily,[coffee]);assert.equal(daily.reminders.length,2);assert.equal(daily.reminders[1].remindDate,'2026-11-01');assert(!daily.reminders[1].dismissed);
+const tea=products.find(p=>p.type==='tea'),drink=products.find(p=>p.type==='drinks');const sample=[tea,drink,coffee],personal={};
+let candidates=c.pickCandidates(sample,personal,data,daily);assert.equal(candidates.length,2);assert(!candidates.some(p=>p.type==='coffee'));
+assert.equal(c.chooseProduct(candidates,tea.id,()=>0).id,drink.id);assert.equal(c.chooseProduct([tea],tea.id,()=>0).id,tea.id);assert.equal(c.chooseProduct([],null),null);
+personal[tea.id]={status:'archived',rating:5,notes:''};daily.excludedDrinkIds=[drink.id];assert.equal(c.pickCandidates(sample,personal,data,daily).length,0);
+daily.pickTypes=['coffee'];assert.equal(c.pickCandidates(sample,personal,data,daily).length,1);daily.pickTypes=[];assert.equal(c.pickCandidates(sample,personal,data,daily).length,0);
+daily.lastRecipes[tea.id]=tea.recipeIds[0];assert.equal(c.validateDaily(JSON.parse(JSON.stringify(daily))).lastRecipes[tea.id],tea.recipeIds[0]);
+assert.throws(()=>c.validateDaily({reminders:[{...daily.reminders[0],remindDate:'bad'}]}));assert.throws(()=>c.validatePurchaseBatches([{id:'x',purchaseDate:'bad'}]));assert.throws(()=>c.validateDaily({pickTypes:['water']}));
+console.log('PASS: reminder dates, roast precedence, purchase overrides, repeat import/dismissal, repurchases, picker defaults, exclusions, equal product candidates, no immediate repeats, empty pools and validation.');

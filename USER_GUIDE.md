@@ -69,3 +69,14 @@ Sources are saved with recipes and accessible under **Recipe sources & guidance*
 Tea details show Recommended water directly below the main brew quantities; tap it to open the water formula. Infusions gives total-steep guidance including the first steep, independent of your selected session volume. Edit recipe → Infusion guidance lets you customize it. Blank guidance uses a labeled type/vessel estimate.
 
 Tea vessel choices now name the brewing style. **Typical potential** describes the selected method; **Today** shows your planned pours and cumulative water. The original leaves are reused. Edit a recipe to change that method’s infusion guidance and optional minimum/maximum; those fields never add steeps or increase dose. Glass recipes include optional second-infusion instructions where appropriate.
+
+
+## Pick for me and coffee reminders
+
+On Home, **Pick for me** starts with Tea and Drinks selected. Toggle Coffee whenever you like; your choices are remembered on this device. Tea and coffee come from In rotation. **Choose drinks** controls which drinks can be suggested. Each product has an equal chance, and Pick again avoids the previous suggestion when another is available. **Make this** opens the product's last-used recipe (or its first recipe), with your usual saved vessel selection.
+
+**Coffee reminders** on Home lets you add or edit a reminder for each purchase. You can also add one from a coffee recipe. Enter the purchase date, optionally the roast date, and choose a reminder date. The 2/3/4-week buttons count from the roast date when supplied, otherwise the purchase date. A new reminder starts three weeks from today; after changing a date, use a week button to recalculate it.
+
+When due, an **Enjoy or freeze** notice appears on Home. Dismiss it or choose **Remind me in a week**. These reminders never change In rotation or Archived, and frozen coffee remains eligible for picks. Edit a dismissed reminder to reactivate it. Repeat purchases can have separate reminders without duplicating the product or its rating.
+
+Reminder edits, dismissal/snooze state, and picker preferences stay on this device and are included in **Export full backup**. They work offline. New purchase dates published with the catalog create reminders on each device; there are no background notifications.
